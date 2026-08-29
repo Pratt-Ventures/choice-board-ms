@@ -18,12 +18,20 @@
   <meta property="og:title" content="ChoiceBoard — Group Decision-Making Software for Teams" />
   <meta property="og:description" content="Stop debating. Start deciding. Compare options head-to-head, gather your team's input, and get a clear, ranked answer — with the receipts to back it up." />
   <meta property="og:image" content="https://choiceboard.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:alt" content="ChoiceBoard — Stop debating. Start deciding." />
+  <meta property="og:locale" content="en_US" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="ChoiceBoard — Group Decision-Making Software for Teams" />
   <meta name="twitter:description" content="Stop debating. Start deciding. Compare options head-to-head and get a clear, ranked answer your whole team trusts." />
+  <meta name="twitter:image" content="https://choiceboard.io/og-image.png" />
+  <meta name="twitter:image:alt" content="ChoiceBoard — Stop debating. Start deciding." />
 
   <!-- Favicon: placeholder mark -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%234059D8'/%3E%3Cpath d='M18 34l10 10 18-22' stroke='%23fff' stroke-width='7' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none'%3E%3Crect width='64' height='64' rx='14' fill='%23fff'/%3E%3Crect x='7' y='7' width='23' height='23' rx='7' stroke='%23152033' stroke-width='6'/%3E%3Crect x='34' y='7' width='23' height='23' rx='7' stroke='%23152033' stroke-width='6'/%3E%3Crect x='7' y='34' width='23' height='23' rx='7' stroke='%23152033' stroke-width='6'/%3E%3Crect x='32' y='32' width='28' height='28' rx='8' fill='%234059D8'/%3E%3Cpath d='M39.5 46.5l5.5 5.5L57 37.5' stroke='%23fff' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <link rel="apple-touch-icon" href="/logo.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,7 +44,7 @@
     "@type": "Organization",
     "name": "ChoiceBoard",
     "url": "https://choiceboard.io/",
-    "logo": "https://choiceboard.io/og-image.png",
+    "logo": "https://choiceboard.io/logo.png",
     "description": "Group decision-making software for teams. Compare options, weigh factors, and reach clear, defensible decisions together."
   }
   </script>
@@ -131,7 +139,9 @@
     .topbar.scrolled{border-bottom-color:var(--line)}
     .topbar .wrap{height:74px;display:flex;align-items:center;gap:36px}
     .logo{display:flex;align-items:center;gap:11px;font:800 20px/1 var(--font-head);letter-spacing:-.02em}
-    .logo-mark{width:36px;height:36px;border-radius:11px;background:linear-gradient(140deg,var(--brand),var(--brand-2));display:grid;place-items:center;box-shadow:0 8px 18px rgba(64,89,216,.3)}
+    .logo b{color:var(--brand);font-weight:800}
+    .logo-mark{width:36px;height:36px;display:grid;place-items:center}
+    .logo-mark svg{width:100%;height:100%}
     .nav{display:flex;gap:28px;font:600 14.5px/1 var(--font-body);color:#3d4759}
     .nav a{padding:8px 0;transition:color .15s}
     .nav a:hover{color:var(--brand)}
@@ -382,11 +392,10 @@
   <header class="topbar" id="topbar">
     <div class="wrap">
       <a class="logo" href="#top" aria-label="ChoiceBoard home">
-        <!-- Placeholder logo mark — swap when final brand is chosen -->
         <span class="logo-mark" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 64 64" fill="none"><path d="M16 34l12 12 20-26" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg viewBox="0 0 64 64" fill="none"><rect x="4.5" y="4.5" width="25" height="25" rx="8" stroke="#152033" stroke-width="5"/><rect x="34.5" y="4.5" width="25" height="25" rx="8" stroke="#152033" stroke-width="5"/><rect x="4.5" y="34.5" width="25" height="25" rx="8" stroke="#152033" stroke-width="5"/><rect x="32" y="32" width="30" height="30" rx="9" fill="#4059D8"/><path d="M40 47.5l6 6L58.5 38" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </span>
-        ChoiceBoard
+        choice<b>board</b>
       </a>
       <nav class="nav" aria-label="Primary">
         <a href="#how-it-works">How it works</a>
@@ -848,10 +857,10 @@
       <div class="foot-grid">
         <div class="foot-brand">
           <a class="logo" href="#top" style="font-size:18px">
-            <span class="logo-mark" style="width:32px;height:32px;border-radius:9px">
-              <svg width="17" height="17" viewBox="0 0 64 64" fill="none"><path d="M16 34l12 12 20-26" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="logo-mark" style="width:30px;height:30px">
+              <svg viewBox="0 0 64 64" fill="none"><rect x="4.5" y="4.5" width="25" height="25" rx="8" stroke="#152033" stroke-width="5"/><rect x="34.5" y="4.5" width="25" height="25" rx="8" stroke="#152033" stroke-width="5"/><rect x="4.5" y="34.5" width="25" height="25" rx="8" stroke="#152033" stroke-width="5"/><rect x="32" y="32" width="30" height="30" rx="9" fill="#4059D8"/><path d="M40 47.5l6 6L58.5 38" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
-            ChoiceBoard
+            choice<b>board</b>
           </a>
           <p>Group decision-making software for teams that would rather decide than debate.</p>
         </div>
@@ -885,7 +894,7 @@
         </div>
       </div>
       <div class="foot-base">
-        <span>© 2026 ChoiceBoard. All rights reserved.</span>
+        <span>© 2026 Pratt Ventures LLC. All rights reserved.</span>
         <span>Made for teams who make the call.</span>
       </div>
     </div>
