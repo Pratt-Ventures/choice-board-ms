@@ -1,1 +1,0 @@
-"""Watcher handlers package — builtin PVF handlers (llm, email, api)."""

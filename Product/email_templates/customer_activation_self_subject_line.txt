@@ -1,1 +1,0 @@
-Activate your {{ new_customer_name|default('Power Choice Pro') }} workspace

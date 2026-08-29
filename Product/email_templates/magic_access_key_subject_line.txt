@@ -1,1 +1,0 @@
-Your one-time access key{% if project_name %} for {{ project_name }}{% endif %}

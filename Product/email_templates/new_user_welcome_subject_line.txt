@@ -1,1 +1,0 @@
-You've been added to {{ customer_name|default('a Power Choice Pro workspace') }}
