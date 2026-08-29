@@ -1,0 +1,15 @@
+meta {
+  name: Dummy OCR
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8100/api/webhooks/ocr
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

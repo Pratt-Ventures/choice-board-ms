@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-18T16-16-52-130Z-build-0l4ybt",
+  "entryId": "e-20260818-0003",
+  "queueEntryId": "e-20260818-0003",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-18T16:25:20.143Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "build",
+  "nodeId": "email-token-for-2fa-and-share-verificati-3dwy3o",
+  "meta": {
+    "code": 0,
+    "agent": "build",
+    "pure": false,
+    "rawStdoutBytes": 507005
+  }
+}

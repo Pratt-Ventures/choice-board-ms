@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-17T18-32-53-302Z-build-s9fx5k",
+  "entryId": "e-20260817-0002",
+  "queueEntryId": "e-20260817-0002",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-17T18:48:27.917Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "build",
+  "nodeId": "share-details-add-option-to-resend-2exxr7",
+  "meta": {
+    "code": 0,
+    "agent": "build",
+    "pure": false,
+    "rawStdoutBytes": 846860
+  }
+}

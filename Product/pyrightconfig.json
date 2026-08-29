@@ -1,0 +1,16 @@
+{
+  "venvPath": "src",
+  "venv": ".venv",
+  "pythonVersion": "3.13",
+  "pythonPlatform": "Linux",
+  "extraPaths": ["."],
+  "typeCheckingMode": "off",
+  "include": ["src"],
+  "exclude": [
+    "**/node_modules",
+    "**/__pycache__",
+    "static_client",
+    "client",
+    "src/.venv"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-15T18-59-18-247Z-plan-aqloe4",
+  "entryId": "e-20260815-0008",
+  "queueEntryId": "e-20260815-0008",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-15T19:03:14.042Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "plan",
+  "nodeId": "email-params-json-encoding-2919mk",
+  "meta": {
+    "code": 0,
+    "agent": "plan",
+    "pure": true,
+    "rawStdoutBytes": 268418
+  }
+}

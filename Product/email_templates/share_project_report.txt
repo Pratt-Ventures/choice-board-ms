@@ -1,0 +1,27 @@
+{#
+  OutboundEmailType.share_project_report  (UI: Full results)
+  Fields: shared_with_company, shared_with_name, valid_duration, project_id,
+          project_name, security_note, share_password_note, magic_token, url
+#}
+{% extends "email_visual_theme.txt" %}
+{% block header_kicker %}Shared results{% endblock %}
+{% block eyebrow %}FULL RESULTS
+
+{% endblock %}
+{% block title %}{{ project_name|default('Shared results') }}
+{% endblock %}
+{% block body %}Hello{% if shared_with_name %} {{ shared_with_name }}{% endif %},
+
+{% if user_name %}{{ user_name }}{% else %}A colleague{% endif %}{% if customer_name %} at {{ customer_name }}{% endif %} shared full results for {{ project_name|default('a decision project') }}.
+
+You can review rankings, participation context, and supporting detail — clear enough to act on and explain.
+{% endblock %}
+{% block cta %}Open full results:
+{{ url }}
+{% endblock %}
+{% block details %}{% if shared_with_company %}Organization: {{ shared_with_company }}
+{% endif %}{% if valid_duration %}Link valid for: {{ valid_duration }}
+{% endif %}{% if security_note %}Access: {{ security_note }}
+{% endif %}{% if share_password_note %}{{ share_password_note }}
+{% endif %}{% endblock %}
+{% block footer_note %}Results links may include participant detail. Share only with people who should see this information.{% endblock %}

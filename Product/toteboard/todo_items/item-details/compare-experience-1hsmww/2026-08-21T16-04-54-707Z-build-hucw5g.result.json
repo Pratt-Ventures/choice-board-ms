@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-21T16-04-54-707Z-build-hucw5g",
+  "entryId": "e-20260821-0004",
+  "queueEntryId": "e-20260821-0004",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-21T16:16:24.422Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "build",
+  "nodeId": "compare-experience-1hsmww",
+  "meta": {
+    "code": 0,
+    "agent": "build",
+    "pure": false,
+    "rawStdoutBytes": 205773
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-21T04-26-10-412Z-build-0sc64d",
+  "entryId": "e-20260821-0003",
+  "queueEntryId": "e-20260821-0003",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-21T04:39:06.794Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "build",
+  "nodeId": "add-include-ai-agents-in-project-setting-6li5ou",
+  "meta": {
+    "code": 0,
+    "agent": "build",
+    "pure": false,
+    "rawStdoutBytes": 794872
+  }
+}

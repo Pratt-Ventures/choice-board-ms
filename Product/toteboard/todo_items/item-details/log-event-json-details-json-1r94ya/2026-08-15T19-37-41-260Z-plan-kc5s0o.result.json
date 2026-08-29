@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-15T19-37-41-260Z-plan-kc5s0o",
+  "entryId": "e-20260815-0002",
+  "queueEntryId": "e-20260815-0002",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-15T19:40:28.269Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "plan",
+  "nodeId": "log-event-json-details-json-1r94ya",
+  "meta": {
+    "code": 0,
+    "agent": "plan",
+    "pure": true,
+    "rawStdoutBytes": 332053
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-20T20-11-01-358Z-expand-h1yifb",
+  "entryId": "e-20260820-0001",
+  "queueEntryId": "e-20260820-0001",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-20T20:11:37.160Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "expand",
+  "nodeId": "node-editor-update-335l22",
+  "meta": {
+    "code": 0,
+    "agent": "plan",
+    "pure": true,
+    "rawStdoutBytes": 1971
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-15T18-25-20-872Z-plan-nfpx3m",
+  "entryId": "e-20260815-0005",
+  "queueEntryId": "e-20260815-0005",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-15T18:34:34.551Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "plan",
+  "nodeId": "add-a-project-end-time-setting-in-the-da-3q4k65",
+  "meta": {
+    "code": 0,
+    "agent": "plan",
+    "pure": true,
+    "rawStdoutBytes": 207554
+  }
+}

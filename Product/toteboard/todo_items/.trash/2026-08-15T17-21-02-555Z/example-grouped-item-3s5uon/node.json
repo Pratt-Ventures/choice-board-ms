@@ -1,0 +1,73 @@
+{
+  "id": "example-grouped-item-3s5uon",
+  "kind": "item",
+  "title": "Example grouped item",
+  "briefDescription": "",
+  "expandedDescription": "",
+  "type": "task",
+  "facets": [],
+  "notes": "",
+  "codeReviewGuide": "",
+  "codeReviewNotes": "",
+  "uiReviewGuide": "",
+  "uiReviewNotes": "",
+  "artifactBase": "example-grouped-item-3s5uon",
+  "createdAt": "2026-08-15T01:38:59.575Z",
+  "updatedAt": "2026-08-15T01:38:59.575Z",
+  "requiredSteps": {
+    "expand": true,
+    "plan": true,
+    "build": true,
+    "codeGuide": false,
+    "userGuide": false
+  },
+  "permissions": {
+    "okToExpand": null,
+    "okToPlan": null,
+    "okToBuild": null,
+    "okToCodeGuide": null,
+    "okToUserGuide": null
+  },
+  "flags": {
+    "readyForExpand": false,
+    "readyForPlan": false,
+    "readyForBuild": false,
+    "readyForCodeGuide": false,
+    "readyForUserGuide": false
+  },
+  "steps": {
+    "expand": {
+      "state": "not-started",
+      "requestedAt": null,
+      "completedAt": null
+    },
+    "plan": {
+      "state": "not-started",
+      "requestedAt": null,
+      "completedAt": null
+    },
+    "build": {
+      "state": "not-started",
+      "requestedAt": null,
+      "completedAt": null
+    },
+    "codeGuide": {
+      "state": "not-started",
+      "requestedAt": null,
+      "completedAt": null
+    },
+    "userGuide": {
+      "state": "not-started",
+      "requestedAt": null,
+      "completedAt": null
+    }
+  },
+  "history": [
+    {
+      "ts": "2026-08-15T01:38:59.575Z",
+      "event": "created",
+      "source": "user"
+    }
+  ],
+  "pauseDispatch": 0
+}

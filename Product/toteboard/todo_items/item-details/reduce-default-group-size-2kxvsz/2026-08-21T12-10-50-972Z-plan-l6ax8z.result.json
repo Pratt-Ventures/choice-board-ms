@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-21T12-10-50-972Z-plan-l6ax8z",
+  "entryId": "e-20260821-0004",
+  "queueEntryId": "e-20260821-0004",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-21T12:12:42.275Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "plan",
+  "nodeId": "reduce-default-group-size-2kxvsz",
+  "meta": {
+    "code": 0,
+    "agent": "plan",
+    "pure": true,
+    "rawStdoutBytes": 248915
+  }
+}

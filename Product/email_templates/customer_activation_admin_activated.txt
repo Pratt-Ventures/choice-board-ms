@@ -1,0 +1,25 @@
+{#
+  OutboundEmailType.customer_activation_admin_activated
+  Fields: url, new_customer_name, new_admin_name, new_customer_email,
+          new_admin_email, new_admin_pw
+#}
+{% extends "email_visual_theme.txt" %}
+{% block header_kicker %}You're in{% endblock %}
+{% block eyebrow %}ACCOUNT READY
+
+{% endblock %}
+{% block title %}Welcome to {{ brand_name|default('Power Choice Pro') }}
+{% endblock %}
+{% block body %}Hello{% if new_admin_name %} {{ new_admin_name }}{% endif %},
+
+Your workspace {{ new_customer_name|default('is ready') }} has been set up{% if user_name %} by {{ user_name }}{% endif %} and is already active.
+Sign in to create projects, collect comparisons, and share results.
+{% endblock %}
+{% block cta %}Sign in:
+{{ url }}
+{% endblock %}
+{% block details %}Workspace: {{ new_customer_name|default('—') }}
+Sign-in email: {{ new_admin_email|default(new_customer_email)|default('—') }}
+{% if new_admin_pw %}Temporary password: {{ new_admin_pw }}
+Change this password after your first sign-in.
+{% endif %}{% endblock %}

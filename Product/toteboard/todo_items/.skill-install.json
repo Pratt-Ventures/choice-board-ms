@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "variant": "mini",
+  "updatedAt": "2026-08-15T01:39:13.935Z",
+  "files": [
+    {
+      "path": ".opencode/skills/todo/SKILL.md",
+      "sha256": "b9322ca33976605d4607c01de641e949b24944a0ea35977e49ed0958cd262824",
+      "label": "OpenCode todo SKILL.md",
+      "variant": "mini"
+    },
+    {
+      "path": ".opencode/skills/todo-run/SKILL.md",
+      "sha256": "4dbe0246d5e5fa42459c8c17b457a6237cbf7612595b834f96a205b7a826abd0",
+      "label": "OpenCode todo-run SKILL.md",
+      "variant": "mini"
+    },
+    {
+      "path": ".github/skills/todo/SKILL.md",
+      "sha256": "b9322ca33976605d4607c01de641e949b24944a0ea35977e49ed0958cd262824",
+      "label": "VS Code todo SKILL.md",
+      "variant": "mini"
+    },
+    {
+      "path": ".github/skills/todo-run/SKILL.md",
+      "sha256": "4dbe0246d5e5fa42459c8c17b457a6237cbf7612595b834f96a205b7a826abd0",
+      "label": "VS Code todo-run SKILL.md",
+      "variant": "mini"
+    },
+    {
+      "path": ".agents/mcp/agentic-todo-mcp.js",
+      "sha256": "7ac6e7874c126d924a4b416b316713ebc6ac2debc25dcc3074c373673eced9c9",
+      "label": "MCP server binary"
+    }
+  ]
+}

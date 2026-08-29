@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-15T18-16-07-254Z-expand-woato5",
+  "entryId": "e-20260815-0001",
+  "queueEntryId": "e-20260815-0001",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-15T18:16:48.604Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "expand",
+  "nodeId": "context-field-masking-3cbp6u",
+  "meta": {
+    "code": 0,
+    "agent": "plan",
+    "pure": true,
+    "rawStdoutBytes": 2116
+  }
+}

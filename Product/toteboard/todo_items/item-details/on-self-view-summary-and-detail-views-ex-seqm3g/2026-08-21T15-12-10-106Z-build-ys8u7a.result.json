@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-21T15-12-10-106Z-build-ys8u7a",
+  "entryId": "e-20260821-0002",
+  "queueEntryId": "e-20260821-0002",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-21T16:03:55.689Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "build",
+  "nodeId": "on-self-view-summary-and-detail-views-ex-seqm3g",
+  "meta": {
+    "code": 0,
+    "agent": "build",
+    "pure": false,
+    "rawStdoutBytes": 474345
+  }
+}

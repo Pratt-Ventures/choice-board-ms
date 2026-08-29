@@ -1,0 +1,25 @@
+{#
+  OutboundEmailType.customer_activation_admin
+  Fields: url_with_activation_code, token_payload, new_customer_name,
+          new_admin_name, new_customer_email, new_admin_email, new_admin_pw
+#}
+{% extends "email_visual_theme.txt" %}
+{% block header_kicker %}Workspace invitation{% endblock %}
+{% block eyebrow %}ACTIVATION REQUIRED
+
+{% endblock %}
+{% block title %}Your workspace is ready to activate
+{% endblock %}
+{% block body %}Hello{% if new_admin_name %} {{ new_admin_name }}{% endif %},
+
+{% if user_name %}{{ user_name }}{% else %}An administrator{% endif %} created a {{ brand_name|default('Power Choice Pro') }} workspace for {{ new_customer_name|default('your organization') }} and named you as the admin.
+Confirm your email to finish setup and sign in.
+{% endblock %}
+{% block cta %}Activate workspace:
+{{ url_with_activation_code }}
+{% endblock %}
+{% block details %}Workspace: {{ new_customer_name|default('—') }}
+Admin email: {{ new_admin_email|default(new_customer_email)|default('—') }}
+{% if new_admin_pw %}Temporary password: {{ new_admin_pw }}
+Sign in after activation, then change this password promptly.
+{% endif %}{% endblock %}

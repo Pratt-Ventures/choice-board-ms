@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-21T19-23-24-968Z-build-zttx3c",
+  "entryId": "e-20260821-0001",
+  "queueEntryId": "e-20260821-0001",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-21T19:51:16.102Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "build",
+  "nodeId": "automatic-llm-wording-of-option-and-fact-2qt9i4",
+  "meta": {
+    "code": 0,
+    "agent": "build",
+    "pure": false,
+    "rawStdoutBytes": 1967977
+  }
+}

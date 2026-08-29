@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-21T11-35-40-650Z-build-m332nm",
+  "entryId": "e-20260821-0001",
+  "queueEntryId": "e-20260821-0001",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-21T11:52:12.511Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "build",
+  "nodeId": "add-comaprison-in-question-format-35pcxr",
+  "meta": {
+    "code": 0,
+    "agent": "build",
+    "pure": false,
+    "rawStdoutBytes": 984062
+  }
+}

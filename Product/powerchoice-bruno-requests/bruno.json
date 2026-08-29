@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "powerchoice-bruno-requests",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

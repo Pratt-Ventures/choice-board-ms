@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-19T18-05-54-915Z-plan-96fofu",
+  "entryId": "e-20260819-0002",
+  "queueEntryId": "e-20260819-0002",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-19T18:11:02.810Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "plan",
+  "nodeId": "comare-experience-2s11vk",
+  "meta": {
+    "code": 0,
+    "agent": "plan",
+    "pure": true,
+    "rawStdoutBytes": 89885
+  }
+}

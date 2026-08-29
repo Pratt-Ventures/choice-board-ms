@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-22T10-47-51-818Z-expand-jbiyf3",
+  "entryId": "e-20260822-0001",
+  "queueEntryId": "e-20260822-0001",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-22T10:48:20.061Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "expand",
+  "nodeId": "change-for-feature-ranking-charts-2yw4u9",
+  "meta": {
+    "code": 0,
+    "agent": "plan",
+    "pure": true,
+    "rawStdoutBytes": 2976
+  }
+}

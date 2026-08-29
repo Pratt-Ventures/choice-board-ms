@@ -1,0 +1,19 @@
+{
+  "runId": "run-2026-08-20T21-59-58-140Z-plan-r2hpjq",
+  "entryId": "e-20260820-0001",
+  "queueEntryId": "e-20260820-0001",
+  "via": "executor-opencode",
+  "status": "failed",
+  "finishedAt": "2026-08-20T22:29:58.374Z",
+  "summary": "timeout",
+  "source": "executor-opencode",
+  "action": "plan",
+  "nodeId": "node-editor-update-335l22",
+  "meta": {
+    "code": null,
+    "signal": "SIGTERM",
+    "agent": "plan",
+    "pure": true
+  },
+  "error": "timeout"
+}

@@ -1,0 +1,19 @@
+{
+  "runId": "run-2026-08-21T18-36-22-956Z-build-4mrb4o",
+  "entryId": "e-20260821-0001",
+  "queueEntryId": "e-20260821-0001",
+  "via": "executor-opencode",
+  "status": "failed",
+  "finishedAt": "2026-08-21T18:36:26.938Z",
+  "summary": "opencode exited with code 1",
+  "source": "executor-opencode",
+  "action": "build",
+  "nodeId": "ai-agent-prompting-xxpd39",
+  "meta": {
+    "code": 1,
+    "signal": null,
+    "agent": "build",
+    "pure": false
+  },
+  "error": "opencode exited with code 1"
+}

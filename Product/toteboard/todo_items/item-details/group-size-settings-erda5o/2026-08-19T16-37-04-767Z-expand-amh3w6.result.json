@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-19T16-37-04-767Z-expand-amh3w6",
+  "entryId": "e-20260819-0001",
+  "queueEntryId": "e-20260819-0001",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-19T16:38:16.255Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "expand",
+  "nodeId": "group-size-settings-erda5o",
+  "meta": {
+    "code": 0,
+    "agent": "plan",
+    "pure": true,
+    "rawStdoutBytes": 72320
+  }
+}

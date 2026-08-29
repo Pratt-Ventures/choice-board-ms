@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-21T22-10-36-587Z-expand-4h3xyu",
+  "entryId": "e-20260821-0001",
+  "queueEntryId": "e-20260821-0001",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-21T22:11:03.355Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "expand",
+  "nodeId": "prompting-for-ai-agent-voting-333pnm",
+  "meta": {
+    "code": 0,
+    "agent": "plan",
+    "pure": true,
+    "rawStdoutBytes": 3006
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-22T14-02-25-216Z-build-564cnk",
+  "entryId": "e-20260822-0001",
+  "queueEntryId": "e-20260822-0001",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-22T14:30:06.052Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "build",
+  "nodeId": "project-overview-layout-change-m605ap",
+  "meta": {
+    "code": 0,
+    "agent": "build",
+    "pure": false,
+    "rawStdoutBytes": 237130
+  }
+}

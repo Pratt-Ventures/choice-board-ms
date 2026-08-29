@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-18T17-56-45-455Z-build-3ycy2c",
+  "entryId": "e-20260818-0002",
+  "queueEntryId": "e-20260818-0002",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-18T18:03:26.059Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "build",
+  "nodeId": "share-options-in-user-interface-9iqzz1",
+  "meta": {
+    "code": 0,
+    "agent": "build",
+    "pure": false,
+    "rawStdoutBytes": 410675
+  }
+}

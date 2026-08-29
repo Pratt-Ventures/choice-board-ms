@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-19T10-57-30-210Z-plan-f9blbs",
+  "entryId": "e-20260819-0002",
+  "queueEntryId": "e-20260819-0002",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-19T11:03:29.911Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "plan",
+  "nodeId": "styel-of-boxes-in-presentation-need-upda-2ft61s",
+  "meta": {
+    "code": 0,
+    "agent": "plan",
+    "pure": true,
+    "rawStdoutBytes": 132284
+  }
+}

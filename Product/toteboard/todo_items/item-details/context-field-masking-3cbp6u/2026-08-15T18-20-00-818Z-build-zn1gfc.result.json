@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-15T18-20-00-818Z-build-zn1gfc",
+  "entryId": "e-20260815-0003",
+  "queueEntryId": "e-20260815-0003",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-15T18:24:38.541Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "build",
+  "nodeId": "context-field-masking-3cbp6u",
+  "meta": {
+    "code": 0,
+    "agent": "build",
+    "pure": false,
+    "rawStdoutBytes": 348854
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "add-optional-questions-to-answer-step-in-2y4ioc",
+  "kind": "item",
+  "title": "Add optional Questions to Answer step in the sequence.... Or have it specifically requested and parsed in expand and plan stage",
+  "briefDescription": "",
+  "expandedDescription": "",
+  "type": "task",
+  "facets": [],
+  "notes": "",
+  "codeReviewGuide": "",
+  "codeReviewNotes": "",
+  "uiReviewGuide": "",
+  "uiReviewNotes": "",
+  "artifactBase": "add-optional-questions-to-answer-step-in-2y4ioc",
+  "createdAt": "2026-08-20T21:55:43.956Z",
+  "updatedAt": "2026-08-20T21:55:43.956Z",
+  "requiredSteps": {
+    "expand": true,
+    "plan": true,
+    "build": true,
+    "codeGuide": false,
+    "userGuide": false
+  },
+  "permissions": {
+    "okToExpand": null,
+    "okToPlan": null,
+    "okToBuild": null,
+    "okToCodeGuide": null,
+    "okToUserGuide": null
+  },
+  "flags": {
+    "readyForExpand": false,
+    "readyForPlan": false,
+    "readyForBuild": false,
+    "readyForCodeGuide": false,
+    "readyForUserGuide": false
+  },
+  "steps": {
+    "expand": {
+      "state": "not-started",
+      "requestedAt": null,
+      "completedAt": null
+    },
+    "plan": {
+      "state": "not-started",
+      "requestedAt": null,
+      "completedAt": null
+    },
+    "build": {
+      "state": "not-started",
+      "requestedAt": null,
+      "completedAt": null
+    },
+    "codeGuide": {
+      "state": "not-started",
+      "requestedAt": null,
+      "completedAt": null
+    },
+    "userGuide": {
+      "state": "not-started",
+      "requestedAt": null,
+      "completedAt": null
+    }
+  },
+  "history": [
+    {
+      "ts": "2026-08-20T21:55:43.956Z",
+      "event": "created",
+      "source": "user"
+    }
+  ],
+  "pauseDispatch": 0
+}

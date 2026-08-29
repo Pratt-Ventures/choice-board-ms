@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-23T03-00-23-899Z-plan-guvo3d",
+  "entryId": "e-20260823-0001",
+  "queueEntryId": "e-20260823-0001",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-23T03:00:55.630Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "plan",
+  "nodeId": "analytic-tracking-code-injection-19m212",
+  "meta": {
+    "code": 0,
+    "agent": "plan",
+    "pure": true,
+    "rawStdoutBytes": 8665
+  }
+}

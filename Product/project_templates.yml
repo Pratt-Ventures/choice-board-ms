@@ -1,0 +1,155 @@
+# System-shared project templates. At startup, any title not already present as a
+# global-share template is created (soft-deleted or disabled rows count as existing).
+# Owned by the first system_admin user (system_user_mode >= 2) with enable_global_share=true.
+#
+# use_with_projects / use_with_options / use_with_factors control where a template is
+# offered for import. Import is always a one-time copy (no live linkage).
+
+templates:
+  - factor_template_title: Project Prioritization
+    factor_template_description: Rank initiatives by strategic value, urgency, and delivery risk.
+    use_with_projects: false
+    use_with_options: false
+    use_with_factors: true
+    factor_template_entries:
+      - factor_title: Strategic alignment
+        factor_description: How well the initiative advances core strategy and stated goals.
+        factor_polarity_positive: true
+      - factor_title: Business value / ROI
+        factor_description: Expected return relative to cost and effort.
+        factor_polarity_positive: true
+      - factor_title: Urgency / time sensitivity
+        factor_description: Cost of delay and need to act in the near term.
+        factor_polarity_positive: true
+      - factor_title: Delivery risk
+        factor_description: Likelihood of schedule, scope, or technical setbacks.
+        factor_polarity_positive: false
+      - factor_title: Resource readiness
+        factor_description: Availability of people, budget, and skills to execute.
+        factor_polarity_positive: true
+      - factor_title: Stakeholder support
+        factor_description: Sponsorship and buy-in from key decision makers.
+        factor_polarity_positive: true
+
+  - factor_template_title: Large Purchase Vendor Alternatives
+    factor_template_description: Compare vendors for a major purchase or long-term supply commitment.
+    use_with_projects: false
+    use_with_options: false
+    use_with_factors: true
+    factor_template_entries:
+      - factor_title: Total cost of ownership
+        factor_description: Purchase price plus operating, support, and switching costs over the lifecycle.
+        factor_polarity_positive: false
+        factor_polarity_note: Lower TCO is better
+      - factor_title: Product / solution fit
+        factor_description: How well capabilities match requirements and use cases.
+        factor_polarity_positive: true
+      - factor_title: Reliability and quality
+        factor_description: Track record for uptime, defects, and consistent delivery.
+        factor_polarity_positive: true
+      - factor_title: Support and service
+        factor_description: Responsiveness, SLAs, and quality of ongoing support.
+        factor_polarity_positive: true
+      - factor_title: Vendor stability
+        factor_description: Financial health, roadmap continuity, and market position.
+        factor_polarity_positive: true
+      - factor_title: Contract flexibility
+        factor_description: Terms, exit options, and ability to scale or change scope.
+        factor_polarity_positive: true
+
+  - factor_template_title: Hiring Decision
+    factor_template_description: Evaluate candidates for a key role against role-critical factors.
+    use_with_projects: false
+    use_with_options: false
+    use_with_factors: true
+    factor_template_entries:
+      - factor_title: Role-critical skills
+        factor_description: Depth of skills required to succeed in the core responsibilities.
+        factor_polarity_positive: true
+      - factor_title: Relevant experience
+        factor_description: Past work in comparable domains, scale, or problem types.
+        factor_polarity_positive: true
+      - factor_title: Culture and team fit
+        factor_description: Alignment with working norms and collaboration style.
+        factor_polarity_positive: true
+      - factor_title: Growth potential
+        factor_description: Capacity to take on broader scope over time.
+        factor_polarity_positive: true
+      - factor_title: Communication
+        factor_description: Clarity with peers, stakeholders, and written artifacts.
+        factor_polarity_positive: true
+
+  - factor_template_title: Build vs Buy vs Partner
+    factor_template_description: Choose how to obtain a capability — internal build, purchase, or partnership.
+    use_with_projects: false
+    use_with_options: false
+    use_with_factors: true
+    factor_template_entries:
+      - factor_title: Time to value
+        factor_description: How quickly the option delivers usable outcomes.
+        factor_polarity_positive: true
+      - factor_title: Control and differentiation
+        factor_description: Ability to customize and own unique advantages.
+        factor_polarity_positive: true
+      - factor_title: Long-term cost
+        factor_description: Ongoing spend including maintenance, fees, and opportunity cost.
+        factor_polarity_positive: false
+        factor_polarity_note: Lower long-term cost is better
+      - factor_title: Risk and dependency
+        factor_description: Exposure to third parties, lock-in, and delivery uncertainty.
+        factor_polarity_positive: false
+      - factor_title: Internal capability fit
+        factor_description: Match to existing skills, systems, and operating model.
+        factor_polarity_positive: true
+
+  - factor_template_title: Market Expansion Opportunity
+    factor_template_description: Compare markets or segments for expansion investment.
+    use_with_projects: false
+    use_with_options: false
+    use_with_factors: true
+    factor_template_entries:
+      - factor_title: Market size and growth
+        factor_description: Addressable demand and expected growth trajectory.
+        factor_polarity_positive: true
+      - factor_title: Competitive intensity
+        factor_description: Strength and number of competitors in the segment.
+        factor_polarity_positive: false
+      - factor_title: Strategic fit
+        factor_description: Alignment with brand, portfolio, and long-term strategy.
+        factor_polarity_positive: true
+      - factor_title: Go-to-market readiness
+        factor_description: Channels, partners, and operational ability to enter.
+        factor_polarity_positive: true
+      - factor_title: Regulatory / entry barriers
+        factor_description: Legal, compliance, and structural hurdles to entry.
+        factor_polarity_positive: false
+      - factor_title: Expected margin profile
+        factor_description: Sustainable unit economics once established.
+        factor_polarity_positive: true
+
+  - factor_template_title: Team 360 Evaluation
+    factor_template_description: >
+      Structured peer feedback for a small team. Import as a full project starter
+      (private participation, rank-all mode, and shared factors) or apply factors only
+      to an existing project. Designed for constructive, everyday workplace feedback.
+    use_with_projects: true
+    use_with_options: false
+    use_with_factors: true
+    project_exclusive_mode: false
+    private_participation: true
+    factor_template_entries:
+      - factor_title: Reliability
+        factor_description: Follows through on commitments and delivers work when expected.
+        factor_polarity_positive: true
+      - factor_title: Collaboration
+        factor_description: Works well with others, shares information, and supports shared goals.
+        factor_polarity_positive: true
+      - factor_title: Communication
+        factor_description: Explains ideas clearly and listens so others can stay aligned.
+        factor_polarity_positive: true
+      - factor_title: Problem solving
+        factor_description: Spots issues early and helps find practical ways forward.
+        factor_polarity_positive: true
+      - factor_title: Supportiveness
+        factor_description: Helps teammates succeed and contributes to a respectful team climate.
+        factor_polarity_positive: true

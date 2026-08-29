@@ -1,0 +1,26 @@
+{#
+  Power Choice Pro — shared plain-text email shell.
+  Child templates: {% extends "email_visual_theme.txt" %} then fill blocks.
+  Optional: brand_name, support_email, year, plus type-specific fields.
+#}
+{{ brand_name|default('Power Choice Pro') }}
+{% block header_kicker %}Decision workspace{% endblock %}
+{% block divider %}========================================{% endblock %}
+
+{% block eyebrow %}{% endblock %}{% block title %}{% endblock %}
+
+{% block body %}{% endblock %}
+
+{% block cta %}{% endblock %}
+
+{% block details %}{% endblock %}
+
+----------------------------------------
+{% block signoff %}
+{% if customer_name %}Sent on behalf of {{ customer_name }}{% if user_name %} · {{ user_name }}{% endif %}{% if user_email %} · {{ user_email }}{% endif %}
+{% else %}{{ brand_name|default('Power Choice Pro') }} — clear decisions, explained.
+{% endif %}
+{% endblock %}
+{% block footer_note %}If you did not expect this message, you can ignore it. Do not forward security links.{% endblock %}
+
+© {{ year|default('') }} {{ brand_name|default('Power Choice Pro') }}{% if support_email %} · {{ support_email }}{% endif %}

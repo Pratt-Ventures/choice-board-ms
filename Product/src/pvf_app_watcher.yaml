@@ -1,0 +1,30 @@
+# src/pvf_app_watcher.yaml — critical watcher bindings only
+# Env / operating tunables remain in PvfGlobalSettings (.env), not here.
+# This file is deployment-fixed and validated at startup; YAML is authoritative for `types`.
+version: 1
+capture_payloads: true          # mirrors PvfGlobalSettings.WATCHER_CAPTURE_PAYLOADS (default True)
+no_log_request_types: []        # semantic tags / work_types that never get detailed logs, even on error; [] in prod, cleared in dev/test
+types:
+  # builtin PVF handlers (kind: pvf) — framework provides the entry point
+  llm:
+    kind: pvf
+    module: src.pvf.watcher.handlers.llm
+    entry: handle_llm
+    description: "Generic LLM queue (dedicated watcher_llm_requests table)"
+  outbound_email:
+    kind: pvf
+    module: src.pvf.watcher.handlers.email
+    entry: handle_email
+    description: "Outbound email queue (dedicated watcher_email_requests table)"
+  outbound_api_call:
+    kind: pvf
+    module: src.pvf.watcher.handlers.api
+    entry: handle_api
+    description: "Outbound API callback queue (dedicated watcher_api_requests table)"
+  # app-declared example (kind: app) — framework imports and calls it; participates in no_log filtering when listed
+  SHORTEN_PRODUCT_NAME:
+    kind: app
+    module: src.app.watcher_handlers
+    entry: shorten_product_name
+    description: "Application semantic tag; participates in no_log filtering when listed"
+  # generic fallback for any future type not listed still reads from watcher_generic_jobs (no YAML entry required)

@@ -1,0 +1,231 @@
+# Add Report Bug and Submit Suggestions
+
+## Short Description
+### user
+We are adding dialogs to submit a suggestion and report a bug. This will only be available for logged in users.  These options will be added the current session pulldown in the upper right area. Another option is 'Check Submission Status' - These should be immediatly above the About entry.
+
+These will each submit to a new endpoint we will create in this request. The dialog will ask for a title/summary and a brief description.  
+
+Ensure the client settings indicate if this feature is enabled and available on the server. If not, the option on the user session menu will not be presented.
+
+For bug reports, these are the recommend fields, including an option to paste or upload a screen shot.
+Summary *
+What happened? *
+What did you expect to happen?
+Steps to reproduce
+Impact: Minor / Moderate / Blocking
+Optionally Attach screenshot or file
+
+For suggestions, 
+Suggestion *
+What would this help you accomplish?
+Area of the product
+Importance: Nice to have / Important / Very important
+Optional Attachment
+
+We will create two new databases that captures user submissions. 
+
+These will follow the patterns used by other sqlmodel tables defined in the application. In addition to reasonable named fields from the above, they will each have an integer id, a customer_id, a user_id, acknowledge receipt date, acknowledge receipt user, acknowledge note text, response date, response user, response note text, resolution date, resolution user, resolution note text, creation date (use standard naming from code), modify date, soft deletion date.
+
+A session services group for 'User Communication' will be added. This group will have submit requests for each these, bug reports and suggestions, for any user. Users will be limited to a configured, MAX_REPORTS_PER_DAY, defaulting to 10, in a rolling 24 hour period. If they exceed that, the new submission will be stored, and a warning returned that they've reached the daily submission limit for that type. If they exceed the configured limit by 1, the added submission is captured in the variable area of a log_entry and the user is given an error response, stating the request was discarded due to daily submission limits. In each response, also include the number of rows of the type in the trailing 24 hours and the maximum allowed (not including the buffer). This should be shown to the user that submission n of x (per day) has been submitted.
+
+All of the related requests will be mirrored for each type. These include retrieve submissions request will retrieve all submissions of the type, bug or suggestion, for a customer if customer admin, or specific user otherwise.  
+
+An administrative retrieve all submissions for system admins, for each type, with offset and limit fields, will be used to provide a paginated view for admins in most recent first order. 
+
+Each type will also have a modify service, available only to system admins, that allows setting the relevant dates to current time for each of the actions (acknowledge, response, resolution) and notes for each. Notes can be entered independent of setting the date.
+
+Each type will have a soft-delete service, that sets the deletion date, and is available to any user to soft-delete their own submissions prior to any of the relavent actions or updates from an admin. The system admin can soft delete any item.
+
+The retrieve my submissions requests are used to provide a table view, scrollable if needed, for end users, that list recent submissions by date, clipped initial words from summary or suggestion, and dates for acknowledge, response, and resolution, when available. If notes are available for acknowledge, response or resolution, they are shown near the respective dates with circled i that will provide a stable hover over with the appropriate note text. The single page in the user interface shows suggestions first, if any, and the the bug report listing below. If either is not found, it states 'No active suggestions found' or 'No active bug reports found'
+
+For system admins only, add a left menu area entry for 'System Admin' This leads to a page, that will have two links initially. One for the suggestion box, one for bug reports. These will provide paginated lists, most recent first, by submission date, linked customer name, linked user name, front part of summary or suggestion, and the dates for each action (or NA if none). A rightmost column shows Edit/Delete and if clicked will show a box overlayed with full details vertically and options to set or clear the three dates and edit the three text response fields. The bottom of the dialog has the option to cancel, delete, or save. Delete should ask are you sure.
+
+This lays out the basic behavior, the rest services that will be needed, and user interface instructions. Fill in necessary or clearly beneficial extensions, arrange aesthetically strong pages, consistent with the style guide and other pages, add be sure to add appropriate tests of functionality and security.
+
+If common code can be used to create the baseline, for any database table, service, or user interface elements, that is preferred.
+
+
+[comment: updated 2026-08-19T12:36:13.054Z | id add-report-bug-and-submit-suggestions-18vlkf]
+
+## Expanded Description
+### agent
+Logged-in users get session-menu items immediately above About for Report Bug, Submit Suggestion, and Check Submission Status, shown only when client settings say the server feature is enabled. Two SQLModel tables persist submissions (form fields plus customer/user ids, ack/response/resolution dates-users-notes, created/modified, soft-delete). A User Communication service group mirrors submit, retrieve (own or customer-admin), admin paginated retrieve, admin modify, and owner/admin soft-delete for both types, with a rolling 24h MAX_REPORTS_PER_DAY (default 10): store+warn at the limit, discard+log_entry at limit+1, and every response includes n of x for the UI.
+
+- Scope: feature flag, session menu, submit dialogs (bug: summary*, what happened*, expected, steps, impact, attachment; suggestion: suggestion*, goal, area, importance, attachment), status page (suggestions then bugs, clipped text, dates, circled-i note hovers, empty states), System Admin nav + paginated lists + edit/delete overlay, tests for function and authz.
+- Prefer shared table/service/UI baselines over duplicated type-specific code.
+- Rate-limit buffer is one extra stored row; the next attempt is discarded and logged; counts exclude the buffer from the published max.
+- Users may soft-delete only their own items before any admin action; system admins can delete any; notes can change without setting dates.
+- Open: attachment storage (inline vs file service), exact client-settings key, whether customer admins see all customer submissions on the status page, and confirm/clear semantics for admin date fields.
+[comment: expanded description edited 2026-08-19T12:36:13.054Z]
+
+
+## Plan
+### agent
+I'll inspect existing session-menu, settings, SQLModel, and service patterns so the plan matches this codebase.Graph exists — querying it and reading the session-menu, settings, and SQLModel patterns in parallel.I have the main patterns. Next I’ll confirm OpenAPI tags, client-settings keys, and config/MAX_* conventions.# Add Report Bug and Submit Suggestions
+
+Logged-in, feature-flagged session-menu items (above About) submit bugs/suggestions to a mirrored User Communication API. Two SQLModel tables persist form + lifecycle fields. Rate limit is 10/day + one stored buffer, then discard+log. Status page for users; System Admin nav + paginated inbox for `system_user_mode >= 2`. Shared mixins/helpers/components — no duplicated type-specific stacks.
+
+**Conventions to follow:** `create_date` / `modify_date` / `deleted_date`; CRUD on the model; `WsResultPackage` DTOs; `UserAccessDep` + inline 403; kebab POST routes under `/ws`; OpenAPI tags in `src/app_shell.py`; import models in `src/db/models/bootstrap.py`; Alembic `down_revision` = current head `5d013b882699`.
+
+---
+
+## 1. Implementation steps
+
+1. **Config + client flag**
+   - Add `MAX_REPORTS_PER_DAY: int = 10` and `ENABLE_USER_COMMUNICATION: int = 0` (gated; env-overridable) on `GlobalSettings` (`src/config/config_settings.py`).
+   - Add `enable_user_communication: bool` on `ClientSettings` (`src/config/config_client.py`), sourced from that setting — same `enable_*` merge pattern as share flags. UI and API both honor it.
+
+2. **Shared model baseline**
+   - New mixin (not a table) `UserCommunicationLifecycle` in `src/db/models/user_communication.py`: `id`, `customer_id` (indexed), `user_id` (indexed), `acknowledge_date` / `acknowledge_user_id` / `acknowledge_note`, same trio for `response_*` and `resolution_*`, `create_date`, `modify_date`, `deleted_date`, plus attachment metadata (`attachment_filename`, `attachment_content_type`, `attachment_bytes` LargeBinary, nullable).
+   - `BugReport(UserCommunicationLifecycle, table=True)`: `summary`, `what_happened` (required), `expected_happened`, `steps_to_reproduce`, `impact` (`minor` | `moderate` | `blocking`).
+   - `Suggestion(UserCommunicationLifecycle, table=True)`: `suggestion` (required), `accomplish_goal`, `product_area`, `importance` (`nice_to_have` | `important` | `very_important`).
+   - Shared list/one/delete DTOs extending `WsResultPackage`; list rows are view models (no `attachment_bytes`) with `customer_name`, `user_name`, `has_attachment`.
+   - Shared methods on a helper bound to the model class: create, count-in-window, list (scoped), get-by-id, admin-list (offset/limit, `create_date` desc), modify lifecycle, soft-delete. Import both tables in `bootstrap.py`.
+   - Indexes: `(user_id, create_date)`, `(customer_id, create_date)`, `(deleted_date, create_date)`.
+
+3. **Alembic**
+   - New revision after `5d013b882699` creating `bugreport` and `suggestion` (lowercased class names). `upgrade` + `downgrade`.
+
+4. **Rate-limit + submit**
+   - Rolling 24h count by `user_id` + `create_date` **including soft-deleted** (blocks delete-and-resubmit).
+   - `n <= MAX`: store, success.
+   - `n == MAX+1`: store, warning `failure_reason` that the daily limit was reached.
+   - `n >= MAX+2`: do not insert; `log_event(..., severity=2, details_json={type, title, fields, filename})`; error that the request was discarded.
+   - Every submit response: `submitted_in_window` (count after this attempt if stored, else current count), `max_per_day` (= configured max, **not** including buffer), `stored: bool`, `limit_warning: bool`. UI: “Submission n of x (per day)”.
+
+5. **Session router** (`src/api/app_user_communication.py`)
+   - Tag `user-communication` (“User Communication”) in `_OPENAPI_TAGS_SESSION`; `invocation.add_router(PvfAppTarget.session, ...)`.
+   - Prefix `/user-comm/`. Mirror per type (`bug-report-*` / `suggestion-*`):
+     - `POST ...-submit` — any logged-in user; multipart (`File` optional + form fields) so screenshot/file rides with the row. Feature off → 403.
+     - `POST ...-retrieve` — member: own non-deleted; customer admin: all non-deleted for `customer_id`.
+     - `POST ...-admin-retrieve` — `system_user_mode >= 2` only; body `offset`, `limit` (default 25, max 100); most recent first; return `total_count`.
+     - `POST ...-admin-modify` — sysadmin; set/clear the three dates (set = now + current user id; clear = null date and user); notes patch independently (including empty to clear).
+     - `POST ...-delete` — owner if no admin stamp yet (`acknowledge_date`, `response_date`, `resolution_date` all null); sysadmin any row. Sets `deleted_date`.
+     - `GET ...-attachment/{id}` — same visibility as retrieve; stream bytes. Not in list payloads.
+   - Thin wrappers calling the shared helper with the model class.
+
+6. **Authz tests** — `src/tests/test_user_communication.py` using `as_user` / `account` / `sysadmin_account` / `other_account`:
+   - Unauth 401/403; feature-off 403; member submit + n/x; 11th warns+stores; 12th discarded + `ApplicationLogEvent.details_json`; member retrieve own only; customer admin retrieve all in tenant; cross-tenant empty/`failure_reason`; owner delete before admin action; owner delete after ack denied; sysadmin delete any; sysadmin modify set/clear dates and notes-only; member/customer-admin modify/admin-retrieve 403; attachment ACL; window counts include soft-deleted.
+
+7. **Client API + types**
+   - Types on `WsResultPackage` in `client/types/api.ts`.
+   - `useUserCommunicationApi.ts`: JSON retrieve/modify/delete via `apiFetch`; submit via FormData + `credentials: 'include'` (branding pattern).
+   - `requireSystemAdmin()` next to `requireAdmin()` in `useAuth.ts`.
+
+8. **Session menu** (`client/layouts/default.vue`)
+   - Immediately above About, `v-if` on `enable_user_communication`: Report Bug (`fa-bug`), Submit Suggestion (`fa-lightbulb`), Check Submission Status (`to="/submissions"`, `fa-clipboard-list`).
+   - Host `ReportBugDialog` + `SubmitSuggestionDialog` like `AboutDialog`.
+
+9. **Submit dialogs** (one parameterized `SubmissionFormDialog.vue`)
+   - Bug: Summary*, What happened*, Expected, Steps, Impact select, attach/paste screenshot.
+   - Suggestion: Suggestion*, What would this help you accomplish?, Area select (Projects / Sharing / Compare / Results / Templates / Team / Account / Other), Importance select, optional attachment.
+   - Hidden `<input type="file">`; paste listener turns clipboard images into a file. Client cap 8 MiB. Validate required via snackbar. On success show “Submission n of x (per day)”; surface warn/discard copy from the server.
+
+10. **Status page** — `client/pages/submissions/index.vue`
+    - Eyebrow/title like Sharing. Suggestions table first, bugs below. Shared `SubmissionStatusTable`.
+    - Columns: date, clipped summary/suggestion (~48 chars + ellipsis), acknowledge / response / resolution dates (`formatDate(..., true)` or —). Circled-i (`fa-circle-info`) + `v-tooltip` when a note exists (new but native Vuetify; more stable than `title=`).
+    - Customer-admin view adds Submitter. Empty: “No active suggestions found” / “No active bug reports found”. Soft-deleted omitted.
+
+11. **System Admin UI**
+    - Nav section “System Admin” (`v-if="isSystemAdmin"`, `fa-shield-halved`) → `/admin`.
+    - Hub: two cards — Suggestion box, Bug reports.
+    - `/admin/suggestions` and `/admin/bugs`: paginated `v-table`, most recent first; customer name, user name, clipped text, three action dates or “NA”, rightmost Edit/Delete.
+    - Overlay (`pc-dialog-card`, scrollable): full fields + attachment download; set/clear each date; edit three notes; Cancel / Delete / Save. Delete opens “Are you sure?” (projects pattern). Non-sysadmin hitting `/admin*` → `navigateTo('/projects')`.
+    - Wire `pageTitle` / `pageSubtitle` in the layout.
+
+12. **Polish + verify**
+    - Match `main.scss` / existing dialog chrome; reuse `PageHeader` / `EmptyState` where they fit.
+    - Rebuild client static assets if the project requires it (`./scripts/nuxt/update_static_client.sh`).
+    - Run backend tests for the new file plus lint/typecheck on touched client files.
+
+---
+
+## 2. Clarifying questions
+
+1. Should `ENABLE_USER_COMMUNICATION` default **off** (gated release) or on in non-prod?
+2. Status page: customer admins see **all workspace** submissions (recommended) or only their own, with the wider retrieve reserved for a later admin view?
+3. Admin date controls: explicit **Set now / Clear** (recommended), or a single stamp-on-save with no clear?
+4. Attachments: one **inline LargeBinary** per row (recommended), or skip files in v1?
+5. Product area: fixed select listed above, or free text?
+6. Should “linked” customer/user names only display, or navigate somewhere (no customer-directory page exists today)?
+7. Count soft-deleted rows toward the 24h cap? (Recommended **yes**.)
+
+---
+
+## 3. Options and trade-offs
+
+**A. Tables: two tables + mixin vs one table + `kind` vs fully duplicated models**
+- Two tables + mixin: matches the brief, shared lifecycle/ACL/rate-limit code, independent indexes/migrations. Slightly more Alembic.
+- Single table: less schema, mixed enums/nulls, messier authz tests.
+- Duplicated models: forbidden by “prefer common code”.
+- **Recommend:** two tables + mixin + generic helper.
+
+**B. Attachments: LargeBinary vs branding-style side table vs omit**
+- On-row binary: one upload path, same ACL as the row, no object store (none exists). Rows get large; keep bytes off list DTOs.
+- Separate file table: more flexible, more code.
+- Omit: smaller v1, weaker bug reports.
+- **Recommend:** one optional LargeBinary + metadata; 8 MiB; images + pdf; GET by id.
+
+**C. Feature flag key**
+- `enable_user_communication` (one switch for all three menu items) vs three flags vs `ENABLE_*` only on the server.
+- **Recommend:** one `enable_user_communication` field on `ClientSettings`. Hide menu and reject API when off.
+
+**D. Customer-admin status scope**
+- Follow retrieve spec (admins see tenant) vs always-own on the status page.
+- **Recommend:** status page uses retrieve as specified; add a Submitter column for customer admins.
+
+**E. Admin date semantics**
+- Set-now / Clear flags + independent notes (matches “notes without setting dates” and “set or clear”).
+- Auto-stamp when a note is saved: simpler, loses note-only edits.
+- **Recommend:** explicit set/clear; notes patch independently.
+
+**F. Rate-limit window membership**
+- Active rows only: users can delete and refill.
+- All creates in 24h: honest cap.
+- **Recommend:** all creates, including soft-deleted.
+
+Proceed with the recommendations above if no answers come back; they match the brief and existing PVF/PowerChoice patterns.
+[comment: plan completed 2026-08-18T15:54:52.657Z | via executor-opencode | entryId e-20260818-0003 | artifacts: ./add-report-bug-and-submit-suggestions-18vlkf/2026-08-18T15-46-14-117Z-plan-2il96w.request.md, ./add-report-bug-and-submit-suggestions-18vlkf/2026-08-18T15-46-14-117Z-plan-2il96w.response.md, ./add-report-bug-and-submit-suggestions-18vlkf/2026-08-18T15-46-14-117Z-plan-2il96w.trace.log, ./add-report-bug-and-submit-suggestions-18vlkf/2026-08-18T15-46-14-117Z-plan-2il96w.result.json]
+
+
+## Build Summary
+### agent
+I'll inspect existing session-menu, settings, SQLModel, and service patterns so the implementation matches this codebase.Graph exists — querying it and reading session-menu, settings, and SQLModel patterns in parallel.I have the patterns. Next I’ll read the files I need to change and start implementing.Implementing config, models, helpers, and the session router first.Client types, API composable, menu, dialogs, and pages next.Tests passed. Regenerating the session OpenAPI snapshot and rebuilding the static client.## Build summary
+
+Gated user communication is in: session-menu Report Bug / Submit Suggestion / Check Submission Status (above About, only when `enable_user_communication`), two SQLModel tables, mirrored User Communication APIs with 10/day + 1 buffer then discard+log, status page, and System Admin inbox.
+
+**Commit:** `cd47c569780e14e25e619620fd1ed0b5ae95b9e2`  
+**Message:** Add report-bug and submit-suggestion user communication
+
+Verified: `30 passed` (`test_user_communication.py` + `test_context.py`), Alembic `c7e8f9a0b1d2`, `openapi_sessions.json`, `static_client/` rebuilt. Enable with `ENABLE_USER_COMMUNICATION=1`.
+
+### Touch points
+- `src/config/config_settings.py:17` VERSION `0.7.36`; `:20` `ENABLE_USER_COMMUNICATION` (default off); `:21` `MAX_REPORTS_PER_DAY=10`
+- `src/config/config_client.py:33` `enable_user_communication`
+- `src/db/models/user_communication.py:44` lifecycle mixin; `:64` `BugReport`; `:79` `Suggestion`; `:234` `submit_row` rate-limit; `:296` retrieve; `:314` admin list; `:365` admin modify; `:409` soft-delete
+- `src/db/models/bootstrap.py:24` model import
+- `src/alembic/versions/c7e8f9a0b1d2_add_user_communication_tables.py` `bugreport` / `suggestion`
+- `src/api/app_user_communication.py:100` submit; `:190` retrieve; `:218` admin-retrieve; `:250` admin-modify; `:282` delete; `:334` attachment
+- `src/app_shell.py:24` OpenAPI tag; `:168` router mount
+- `src/tests/test_user_communication.py` authz, rate-limit, ACL, lifecycle
+- `client/layouts/default.vue:53` System Admin nav; `:139` session-menu items
+- `client/composables/useAuth.ts:164` `requireSystemAdmin`
+- `client/composables/useUserCommunicationApi.ts:68` FormData submit
+- `client/components/SubmissionFormDialog.vue` bug/suggestion dialogs
+- `client/pages/submissions/index.vue` status (suggestions then bugs)
+- `client/pages/admin/index.vue:5` hub; `AdminSubmissionInbox.vue` / `AdminSubmissionDialog.vue` lists + overlay
+[comment: build completed 2026-08-18T16:49:07.267Z | via executor-opencode | entryId e-20260818-0004 | artifacts: ./add-report-bug-and-submit-suggestions-18vlkf/2026-08-18T16-25-20-174Z-build-agtevh.request.md, ./add-report-bug-and-submit-suggestions-18vlkf/2026-08-18T16-25-20-174Z-build-agtevh.response.md, ./add-report-bug-and-submit-suggestions-18vlkf/2026-08-18T16-25-20-174Z-build-agtevh.trace.log, ./add-report-bug-and-submit-suggestions-18vlkf/2026-08-18T16-25-20-174Z-build-agtevh.result.json]
+
+
+## Code Review Guide
+
+## UI Review Guide
+
+## History
+- 2026-08-18T16:49:07.267Z build completed (e-20260818-0004)
+- 2026-08-18T15:54:52.657Z plan completed (e-20260818-0003)
+- 2026-08-18T15:42:08.705Z expand completed (e-20260818-0001)
+- 2026-08-18T15:37:28.877Z expand completed (e-20260818-0001)
+- 2026-08-15T02:23:14.937Z expand completed (e-20260815-0001)
+- 2026-08-15T02:21:57.807Z created (source: user)

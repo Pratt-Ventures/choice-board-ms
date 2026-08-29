@@ -1,0 +1,1 @@
+Invitation resent — {{ project_name|default('a decision project') }}

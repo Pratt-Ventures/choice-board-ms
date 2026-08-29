@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-21T14-38-23-256Z-build-hcm62o",
+  "entryId": "e-20260821-0005",
+  "queueEntryId": "e-20260821-0005",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-21T14:49:04.427Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "build",
+  "nodeId": "on-the-project-create-page-add-copy-from-1ni8hs",
+  "meta": {
+    "code": 0,
+    "agent": "build",
+    "pure": false,
+    "rawStdoutBytes": 320902
+  }
+}

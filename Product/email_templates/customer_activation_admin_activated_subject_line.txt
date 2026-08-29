@@ -1,0 +1,1 @@
+{{ new_customer_name|default('Your workspace') }} is ready — sign in to {{ brand_name|default('Power Choice Pro') }}

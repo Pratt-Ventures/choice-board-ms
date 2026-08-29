@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-18T15-36-52-660Z-expand-g4b7ii",
+  "entryId": "e-20260818-0001",
+  "queueEntryId": "e-20260818-0001",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-18T15:37:28.869Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "expand",
+  "nodeId": "add-report-bug-and-submit-suggestions-18vlkf",
+  "meta": {
+    "code": 0,
+    "agent": "plan",
+    "pure": true,
+    "rawStdoutBytes": 2126
+  }
+}

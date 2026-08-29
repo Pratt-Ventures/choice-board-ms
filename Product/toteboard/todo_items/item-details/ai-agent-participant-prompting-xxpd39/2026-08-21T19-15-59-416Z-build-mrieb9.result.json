@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-21T19-15-59-416Z-build-mrieb9",
+  "entryId": "e-20260821-0001",
+  "queueEntryId": "e-20260821-0001",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-21T19:20:01.211Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "build",
+  "nodeId": "ai-agent-prompting-xxpd39",
+  "meta": {
+    "code": 0,
+    "agent": "build",
+    "pure": false,
+    "rawStdoutBytes": 308374
+  }
+}

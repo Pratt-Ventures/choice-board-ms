@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-21T19-08-44-692Z-build-v2l4v5",
+  "entryId": "e-20260821-0003",
+  "queueEntryId": "e-20260821-0003",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-21T19:13:42.979Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "build",
+  "nodeId": "ai-agent-voting-15jxk3",
+  "meta": {
+    "code": 0,
+    "agent": "build",
+    "pure": false,
+    "rawStdoutBytes": 467786
+  }
+}

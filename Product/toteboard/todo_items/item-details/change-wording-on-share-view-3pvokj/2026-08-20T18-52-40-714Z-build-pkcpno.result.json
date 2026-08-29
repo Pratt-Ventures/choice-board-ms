@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-20T18-52-40-714Z-build-pkcpno",
+  "entryId": "e-20260820-0002",
+  "queueEntryId": "e-20260820-0002",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-20T18:56:13.976Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "build",
+  "nodeId": "change-wording-on-share-view-3pvokj",
+  "meta": {
+    "code": 0,
+    "agent": "build",
+    "pure": false,
+    "rawStdoutBytes": 91293
+  }
+}

@@ -1,0 +1,1 @@
+This folder is used for the Bruno HTTP client. Point Bruno here and it'll be able to pick up any canned requests that need to be made available.

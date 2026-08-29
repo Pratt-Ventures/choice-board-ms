@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-20T00-52-56-323Z-build-pz7jbg",
+  "entryId": "e-20260820-0003",
+  "queueEntryId": "e-20260820-0003",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-20T01:05:11.607Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "build",
+  "nodeId": "improve-shared-view-results-1uz1gs",
+  "meta": {
+    "code": 0,
+    "agent": "build",
+    "pure": false,
+    "rawStdoutBytes": 751835
+  }
+}

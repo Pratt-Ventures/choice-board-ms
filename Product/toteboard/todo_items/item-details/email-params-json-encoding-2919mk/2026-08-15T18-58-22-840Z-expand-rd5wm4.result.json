@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-15T18-58-22-840Z-expand-rd5wm4",
+  "entryId": "e-20260815-0007",
+  "queueEntryId": "e-20260815-0007",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-15T18:59:18.180Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "expand",
+  "nodeId": "email-params-json-encoding-2919mk",
+  "meta": {
+    "code": 0,
+    "agent": "plan",
+    "pure": true,
+    "rawStdoutBytes": 109961
+  }
+}

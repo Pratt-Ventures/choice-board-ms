@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-23T03-19-21-997Z-build-3qpaan",
+  "entryId": "e-20260823-0001",
+  "queueEntryId": "e-20260823-0001",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-23T03:30:33.901Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "build",
+  "nodeId": "analytic-tracking-code-injection-19m212",
+  "meta": {
+    "code": 0,
+    "agent": "build",
+    "pure": false,
+    "rawStdoutBytes": 931798
+  }
+}

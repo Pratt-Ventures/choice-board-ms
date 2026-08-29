@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-20T20-11-37-275Z-plan-coz3sc",
+  "entryId": "e-20260820-0002",
+  "queueEntryId": "e-20260820-0002",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-20T20:18:09.496Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "plan",
+  "nodeId": "ai-agent-responses-1x1unn",
+  "meta": {
+    "code": 0,
+    "agent": "plan",
+    "pure": true,
+    "rawStdoutBytes": 383723
+  }
+}

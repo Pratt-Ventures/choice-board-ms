@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-15T19-03-14-093Z-build-v3j42q",
+  "entryId": "e-20260815-0009",
+  "queueEntryId": "e-20260815-0009",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-15T19:10:06.212Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "build",
+  "nodeId": "email-params-json-encoding-2919mk",
+  "meta": {
+    "code": 0,
+    "agent": "build",
+    "pure": false,
+    "rawStdoutBytes": 445518
+  }
+}

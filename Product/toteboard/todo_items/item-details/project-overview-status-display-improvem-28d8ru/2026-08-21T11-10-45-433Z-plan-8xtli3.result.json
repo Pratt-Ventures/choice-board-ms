@@ -1,0 +1,18 @@
+{
+  "runId": "run-2026-08-21T11-10-45-433Z-plan-8xtli3",
+  "entryId": "e-20260821-0002",
+  "queueEntryId": "e-20260821-0002",
+  "via": "executor-opencode",
+  "status": "completed",
+  "finishedAt": "2026-08-21T11:14:10.844Z",
+  "summary": "completed",
+  "source": "executor-opencode",
+  "action": "plan",
+  "nodeId": "project-overview-status-display-improvem-28d8ru",
+  "meta": {
+    "code": 0,
+    "agent": "plan",
+    "pure": true,
+    "rawStdoutBytes": 487558
+  }
+}

@@ -1,0 +1,30 @@
+{#
+  OutboundEmailType.resending_invitation
+  Fields: shared_with_company, shared_with_name, valid_duration, project_id,
+          project_name, security_note, share_password_note, magic_token, url,
+          share_id, shared_type
+#}
+{% extends "email_visual_theme.txt" %}
+{% block header_kicker %}Invitation resent{% endblock %}
+{% block eyebrow %}INVITATION RESENT
+
+{% endblock %}
+{% block title %}{{ project_name|default('Project invitation') }}
+{% endblock %}
+{% block body %}Hello{% if shared_with_name %} {{ shared_with_name }}{% endif %},
+
+A project administrator{% if customer_name %} at {{ customer_name }}{% endif %} asked us to resend this invitation for {{ project_name|default('a decision project') }}.
+
+{% if shared_type == 'report' %}You can review rankings, participation context, and supporting detail — clear enough to act on and explain.
+{% elif shared_type == 'vote_view' %}You will answer one clear comparison at a time. After you mark complete, you can view your personal ranking.
+{% else %}You will answer one clear comparison at a time. Progress is saved automatically so you can pause and resume.
+{% endif %}{% endblock %}
+{% block cta %}{% if shared_type == 'report' %}Open full results:{% else %}Start comparing:{% endif %}
+{{ url }}
+{% endblock %}
+{% block details %}{% if shared_with_company %}Organization: {{ shared_with_company }}
+{% endif %}{% if valid_duration %}Link valid for: {{ valid_duration }}
+{% endif %}{% if security_note %}Access: {{ security_note }}
+{% endif %}{% if share_password_note %}{{ share_password_note }}
+{% endif %}{% endblock %}
+{% block footer_note %}This invitation is intended for you. Do not forward the link if it includes password or access details.{% endblock %}
