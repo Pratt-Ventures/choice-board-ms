@@ -29,8 +29,8 @@
   <meta name="twitter:image" content="https://choiceboard.io/og-image.png" />
   <meta name="twitter:image:alt" content="ChoiceBoard — Stop debating. Start deciding." />
 
-  <!-- Favicon: placeholder mark -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none'%3E%3Crect width='64' height='64' rx='14' fill='%23fff'/%3E%3Crect x='7' y='7' width='23' height='23' rx='7' stroke='%23152033' stroke-width='6'/%3E%3Crect x='34' y='7' width='23' height='23' rx='7' stroke='%23152033' stroke-width='6'/%3E%3Crect x='7' y='34' width='23' height='23' rx='7' stroke='%23152033' stroke-width='6'/%3E%3Crect x='32' y='32' width='28' height='28' rx='8' fill='%234059D8'/%3E%3Cpath d='M39.5 46.5l5.5 5.5L57 37.5' stroke='%23fff' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <!-- Favicon: ChoiceBoard mark -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-45 -45 1001 990' fill='none'%3E%3Crect x='-45' y='-45' width='1001' height='990' rx='170' fill='%23fff'/%3E%3Crect x='25' y='25' width='372' height='372' rx='25' stroke='%23151C34' stroke-width='50'/%3E%3Crect x='513' y='25' width='372' height='372' rx='25' stroke='%23151C34' stroke-width='50'/%3E%3Crect x='488' y='478' width='422' height='422' rx='50' fill='%233F5AD9'/%3E%3Crect x='25' y='503' width='372' height='372' rx='25' stroke='%23151C34' stroke-width='50'/%3E%3Cpath d='M819.8 573.7c8.2 6 10 17.4 4 25.5L677.8 800c-3.1 4.4-8 7-13.3 7.5-5.4.5-10.6-1.5-14.3-5.3l-73-73c-7.2-7.1-7.2-18.7 0-25.8 7.1-7.2 18.7-7.2 25.8 0l57.9 57.9 133.5-183.5c5.9-8.2 17.3-10 25.4-4z' fill='%23fff'/%3E%3C/svg%3E" />
   <link rel="apple-touch-icon" href="/logo.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -106,7 +106,7 @@
 
   <style>
     :root{
-      --brand:#4059D8; --brand-2:#6F7FF2; --accent:#14967F;
+      --brand:#3F5AD9; --brand-2:#6F7FF2; --accent:#14967F;
       --ink:#152033; --navy:#172554; --muted:#5B6779; --faint:#8A94A6;
       --line:#E3E8F1; --soft:#F4F6FA; --paper:#FFFFFF; --cream:#FAFBFD;
       --warn:#B56A0A; --err:#C84256;
@@ -138,7 +138,7 @@
     .topbar{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid transparent;transition:border-color .2s}
     .topbar.scrolled{border-bottom-color:var(--line)}
     .topbar .wrap{height:74px;display:flex;align-items:center;gap:36px}
-    .logo{display:flex;align-items:center;gap:11px;font:800 20px/1 var(--font-head);letter-spacing:-.02em}
+    .logo{display:flex;align-items:center;gap:11px;font:800 20px/1 var(--font-head);letter-spacing:-.02em;color:#151C34}
     .logo b{color:var(--brand);font-weight:800}
     .logo-mark{width:36px;height:36px;display:grid;place-items:center}
     .logo-mark svg{width:100%;height:100%}
@@ -393,9 +393,9 @@
     <div class="wrap">
       <a class="logo" href="#top" aria-label="ChoiceBoard home">
         <span class="logo-mark" aria-hidden="true">
-          <svg viewBox="0 0 64 64" fill="none"><rect x="4.5" y="4.5" width="25" height="25" rx="8" stroke="#152033" stroke-width="5"/><rect x="34.5" y="4.5" width="25" height="25" rx="8" stroke="#152033" stroke-width="5"/><rect x="4.5" y="34.5" width="25" height="25" rx="8" stroke="#152033" stroke-width="5"/><rect x="32" y="32" width="30" height="30" rx="9" fill="#4059D8"/><path d="M40 47.5l6 6L58.5 38" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg viewBox="0 0 911 900" fill="none"><rect x="25" y="25" width="372.222" height="372.222" rx="25" stroke="#151C34" stroke-width="50"/><rect x="513.445" y="25" width="372.222" height="372.222" rx="25" stroke="#151C34" stroke-width="50"/><rect x="488.445" y="477.778" width="422.222" height="422.222" rx="50" fill="#3F5AD9"/><rect x="25" y="502.778" width="372.222" height="372.222" rx="25" stroke="#151C34" stroke-width="50"/><path d="M819.796 573.745C827.953 579.678 829.779 591.086 823.846 599.244L677.813 800.04C674.675 804.375 669.826 807.057 664.464 807.513C659.102 807.969 653.911 805.973 650.146 802.208L577.129 729.191C569.999 722.06 569.999 710.48 577.129 703.35C584.26 696.219 595.84 696.219 602.97 703.35L660.87 761.25L794.354 577.738C800.287 569.581 811.696 567.755 819.853 573.688L819.796 573.745Z" fill="#fff"/></svg>
         </span>
-        choice<b>board</b>
+        Choice<b>Board</b>
       </a>
       <nav class="nav" aria-label="Primary">
         <a href="#how-it-works">How it works</a>
@@ -858,9 +858,9 @@
         <div class="foot-brand">
           <a class="logo" href="#top" style="font-size:18px">
             <span class="logo-mark" style="width:30px;height:30px">
-              <svg viewBox="0 0 64 64" fill="none"><rect x="4.5" y="4.5" width="25" height="25" rx="8" stroke="#152033" stroke-width="5"/><rect x="34.5" y="4.5" width="25" height="25" rx="8" stroke="#152033" stroke-width="5"/><rect x="4.5" y="34.5" width="25" height="25" rx="8" stroke="#152033" stroke-width="5"/><rect x="32" y="32" width="30" height="30" rx="9" fill="#4059D8"/><path d="M40 47.5l6 6L58.5 38" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg viewBox="0 0 911 900" fill="none"><rect x="25" y="25" width="372.222" height="372.222" rx="25" stroke="#151C34" stroke-width="50"/><rect x="513.445" y="25" width="372.222" height="372.222" rx="25" stroke="#151C34" stroke-width="50"/><rect x="488.445" y="477.778" width="422.222" height="422.222" rx="50" fill="#3F5AD9"/><rect x="25" y="502.778" width="372.222" height="372.222" rx="25" stroke="#151C34" stroke-width="50"/><path d="M819.796 573.745C827.953 579.678 829.779 591.086 823.846 599.244L677.813 800.04C674.675 804.375 669.826 807.057 664.464 807.513C659.102 807.969 653.911 805.973 650.146 802.208L577.129 729.191C569.999 722.06 569.999 710.48 577.129 703.35C584.26 696.219 595.84 696.219 602.97 703.35L660.87 761.25L794.354 577.738C800.287 569.581 811.696 567.755 819.853 573.688L819.796 573.745Z" fill="#fff"/></svg>
             </span>
-            choice<b>board</b>
+            Choice<b>Board</b>
           </a>
           <p>Group decision-making software for teams that would rather decide than debate.</p>
         </div>
