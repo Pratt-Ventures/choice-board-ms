@@ -31,6 +31,7 @@ class PublishingTests(unittest.TestCase):
         for name in ['index.html', 'robots.txt', 'sitemap.xml', 'llms.txt', 'llms-full.txt', 'logo.svg', 'logo.png', 'og-image.png']:
             shutil.copy2(ROOT / name, self.root / name)
         shutil.copytree(ROOT / 'blog', self.root / 'blog')
+        shutil.copytree(ROOT / 'images', self.root / 'images')
 
     def tearDown(self):
         self.temp.cleanup()

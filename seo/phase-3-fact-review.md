@@ -1,7 +1,7 @@
 # Phase 3: intake and proposed facts
 
-Research checked September 7, 2026. Status: facts proposed for author review;
-article drafting has not started. Nothing in this packet is publication approval.
+Research checked September 7, 2026. Status: facts approved by the author for
+drafting. This approval covers the facts below, not publication.
 
 ## Confirmed intake
 
@@ -86,6 +86,6 @@ next to their claims, distinguish our advice from research results, and date sou
 review honestly. Draft team pull quotes require editorial approval before publication;
 they must not imply a past statement by a person or customer.
 
-The next step is author review of this fact set, as requested in the intake reply.
-After confirmation, draft the three connected articles and produce their visuals
+The author approved this fact set on September 7, 2026. The three connected
+articles, workbook, visuals, and social copy are prepared as unpublished drafts.
 and social copy. Keep the articles noindex through review.

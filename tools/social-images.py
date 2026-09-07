@@ -34,6 +34,21 @@ def wrap(draw, text, font, width):
     return lines + ([line] if line else [])
 
 
+def load_font(path, size, weight=None):
+    """Load a font and select a requested weight when it is variable."""
+    from PIL import ImageFont
+    font = ImageFont.truetype(str(path), size)
+    if weight is not None:
+        try:
+            axes = font.get_variation_axes()
+            values = [weight if axis.get('name') == b'Weight' else axis.get('default')
+                      for axis in axes]
+            font.set_variation_by_axes(values)
+        except (AttributeError, OSError, ValueError):
+            pass
+    return font
+
+
 def create(args):
     from PIL import Image, ImageDraw, ImageFont, ImageOps
     root = args.root.resolve()
@@ -65,11 +80,11 @@ def create(args):
         draw = ImageDraw.Draw(card)
         margin = 64
         draw.rectangle((0, 0, 16, height), fill=tokens['brand'])
-        label_font = ImageFont.truetype(str(inter), 24)
+        label_font = load_font(inter, 24, 600)
         draw.text((margin, 48), SERIES[args.series], fill=tokens['brand'], font=label_font)
         max_title_height = 245 if height == 630 else 360
         for point in range(64, 31, -2):
-            headline = ImageFont.truetype(str(manrope), point)
+            headline = load_font(manrope, point, 800)
             lines = wrap(draw, title, headline, width - margin * 2)
             if len(lines) * (point + 14) <= max_title_height:
                 break
@@ -87,7 +102,7 @@ def create(args):
             visual = ImageOps.contain(provided, space)
             card.paste(visual, (margin + (space[0] - visual.width) // 2, top), visual)
         else:
-            body = ImageFont.truetype(str(inter), 28 if height == 630 else 34)
+            body = load_font(inter, 28 if height == 630 else 34, 400)
             body_lines = wrap(draw, takeaway, body, width - margin * 2)
             y += 28
             for line in body_lines:
