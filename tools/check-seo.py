@@ -80,7 +80,9 @@ class Check:
                      label, 'analytics initialization must be in head')
         for script in scripts:
             src = script.attrs.get('src', '')
-            self.require(not src or src == f'https://www.googletagmanager.com/gtag/js?id={GA}',
+            self.require(not src or src in {
+                         f'https://www.googletagmanager.com/gtag/js?id={GA}',
+                         '//script.crazyegg.com/pages/scripts/0050/2077.js'},
                          label, 'unapproved external JavaScript: ' + src)
         self.require(not page.tree.all('iframe'), label, 'use a click-through video facade; no preloaded embeds')
         self.require(len(page.tree.all('h1')) == 1, label, 'exactly one h1 required')
