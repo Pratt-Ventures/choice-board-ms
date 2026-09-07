@@ -321,9 +321,12 @@ class Check:
                 self.require((p.url in text) == p.indexed, name, 'publication mismatch: ' + p.url)
         for page in self.pages:
             if page.schema('ItemList'):
-                expected = {p.url for p in self.posts if p.indexed and p.path.parent.parent == page.path.parent}
+                if page.path == self.root / 'blog' / 'index.html':
+                    expected = {p.url for p in self.posts if p.indexed}
+                else:
+                    expected = {p.url for p in self.posts if p.indexed and p.path.parent.parent == page.path.parent}
                 actual = {n.get('url', n.get('item')) for n in page.schema('ItemList').get('itemListElement', [])}
-                self.require(actual == expected, str(page.path.relative_to(self.root)), 'ItemList must match published posts in this series')
+                self.require(actual == expected, str(page.path.relative_to(self.root)), 'ItemList must match published posts in this collection')
         self.warn('manual review', 'source accuracy, author permission, visual layout, rich-result eligibility, analytics receipt, and live indexing cannot be certified by this checker')
         return self.errors, self.warnings
 
