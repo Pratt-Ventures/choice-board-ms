@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The ChoiceBoard blog</title>
+    <link>https://choiceboard.io/blog/</link>
+    <atom:link href="https://choiceboard.io/blog/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Guides, templates, and comparisons on group decision-making for teams: how to compare options, weigh what matters, surface disagreement, and reach a ranked result you can defend.</description>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 07 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <!-- Items are added at go-live for each indexed post (AGENTS.md §19). -->
+  </channel>
+</rss>
