@@ -72,7 +72,9 @@ Every post goes through two distinct checks. Don't conflate them:
 2. **Baseline SEO and AI-search optimization** (*every post, no exceptions*):
    head tags, JSON-LD, canonical, sitemap, feed, dedicated OG image, social
    visuals and copy, "Key takeaways" box, FAQ, markdown alternate,
-   `llms.txt`, internal links, honest dates.
+   `llms.txt`, internal links, honest dates, and the Google Analytics tag
+   specified in §12 on every HTML page. See `seo/strategy.md` for the
+   measurement requirements.
 
 ## 5. Series
 
@@ -223,7 +225,8 @@ creates it, you fill it in, the checker enforces it on indexed posts:
    keyword rules if a query is targeted.
 4. **Author.** Apply §11 if a person signs.
 5. **`<head>`.** `<title>` 50–60 characters, description 140–160,
-   canonical, full OG and Twitter set, ISO 8601 dates, JSON-LD (§12, §13).
+   canonical, full OG and Twitter set, ISO 8601 dates, JSON-LD (§12, §13),
+   and exactly one Google Analytics snippet from §12.
 6. **Video** (video and story posts): set the YouTube ID (facade + chapters
    + noscript + JSON-LD `embedUrl`), duration (`PT12M34S` and displayed
    `12:34`), thumbnail, and paste the **full transcript** into
@@ -287,10 +290,26 @@ dates.
 
 ## 12. `<head>` checklist (every article)
 
-- **Analytics.** No analytics tag is installed on the site yet. When one is
-  added, record the snippet and ID here, place it at the top of `<head>`
-  on every page, and never duplicate it. Until then, do not add any
-  tracking script to a post.
+- **Analytics.** Google Analytics 4 measurement ID: `G-ZLZMXRHMBS`.
+  Include the exact snippet below immediately after the opening `<head>`
+  on every HTML page: landing pages, the blog hub, series pages, articles,
+  video/story pages, drafts, and any future pages. Include it in every
+  page template and generator so new pages inherit it. Load the script
+  and call `gtag('config', 'G-ZLZMXRHMBS')` exactly once per page; never
+  add a second installation through another script or tag manager.
+  Markdown alternates, feeds, and other non-HTML files do not run the tag.
+
+  ```html
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZLZMXRHMBS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-ZLZMXRHMBS');
+  </script>
+  ```
 - `<title>` (50–60 chars, main query first when targeted, ends with
   `| ChoiceBoard`)
 - `<meta name="description">` (140–160 chars, answers the search intent in
@@ -447,10 +466,10 @@ tools/                         Scripts below
 
 | Command | Role |
 |---|---|
-| `python3 tools/new-article.py <series> <slug> "Title" --type <article\|video\|story>` | creates a post from the template, `noindex`, with the meta block filled in |
+| `python3 tools/new-article.py <series> <slug> "Title" --type <article\|video\|story>` | creates a post from the template, `noindex`, with the meta block filled in and the §12 analytics snippet |
 | `python3 tools/social-images.py <series> <slug> --source <generated\|image:PATH\|screenshot:PATH>` | OG image + social set, prints the head tags to paste |
 | `python3 tools/build-llms.py` | regenerates every `index.md`, `llms.txt`, and `llms-full.txt` from indexed posts |
-| `python3 tools/check-seo.py` | validates every rule in §12, §13, §20, and the crawler allowlist in `robots.txt`; 0 errors required |
+| `python3 tools/check-seo.py` | validates every rule in §12, §13, §20, and the crawler allowlist in `robots.txt`; also checks every HTML page and template for exactly one §12 analytics installation; 0 errors required |
 | `tools/indexnow.sh <url…>` | submits published URLs to Bing / IndexNow |
 
 Templates are `noindex` and must never be published or used as a style
@@ -601,12 +620,18 @@ Only after the author answered yes to "Ready to publish?":
 - Transcript always in the HTML for video and story posts.
 - ISO 8601 dates in `datetime`, OG, and JSON-LD.
 - Canonical URLs with trailing slash, `https://choiceboard.io/…`.
-- No external JavaScript beyond the video facade. No third-party embeds
+- Every template includes the Google Analytics snippet from §12 exactly once.
+- No external JavaScript beyond the video facade and the approved Google
+  Analytics tag in §12. No third-party embeds
   that set cookies before consent.
 - Every page keeps the site's progressive-enhancement rule: nothing is
   hidden without JS.
 
 ## 21. Maintenance
+
+- On every page creation or edit, verify that the §12 Google Analytics
+  snippet is present exactly once in `<head>`. When the measurement ID
+  changes, update all HTML pages, templates, generators, and guidance together.
 
 - Update `lastmod` (sitemap), `dateModified`, and the `modified:` line in
   the meta block at every substantive edit. Google and LLMs favor
@@ -626,6 +651,8 @@ Only after the author answered yes to "Ready to publish?":
 - [ ] "Key takeaways", question-form `h2`s, FAQ, one CTA, one signed blockquote
 - [ ] Every figure has a scope and a source; nothing invented
 - [ ] `<head>` and JSON-LD checklists pass; Rich Results Test clean
+- [ ] Google Analytics `G-ZLZMXRHMBS` loads and is configured exactly once
+      in `<head>`; any new templates or generators include the same snippet
 - [ ] Social image set produced; every `<img>` has descriptive alt text
 - [ ] ≥ 2 incoming internal links, 1–2 outgoing post links, 1 landing-page link
 - [ ] `index.md`, `llms.txt`, `llms-full.txt`, `feed.xml`, `sitemap.xml` updated
