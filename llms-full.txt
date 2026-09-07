@@ -1,0 +1,263 @@
+# ChoiceBoard
+
+ChoiceBoard is group decision-making software. Teams define options and factors, answer quick head-to-head comparisons, and get a ranked result with a measured level of agreement — a decision they can defend.
+
+Source: https://choiceboard.io/
+
+Group decision-making software 
+
+# Stop debating. Start deciding.
+
+ChoiceBoard is group decision-making software. Teams define options and factors, answer quick head-to-head comparisons, and get a ranked result with a measured level of agreement — a decision they can defend.
+
+[Start your free trial →](https://choiceboard.io/#pricing) [See how it works](https://choiceboard.io/#how-it-works)
+
+14-day free trial No credit card required Unlimited participants
+
+**~10*s***per comparison — one simple question at a time
+
+**2 *min***to launch a project and invite your team
+
+**0**spreadsheets, score sheets, or shouting matches
+
+**1**clear, ranked answer — with the receipts to back it up
+
+How it works 
+
+## How to make a group decision in four steps
+
+No training, no facilitation degree, no 40-tab spreadsheet. Frame the decision once — ChoiceBoard handles the structure, the math, and the diplomacy.
+
+1
+
+### Frame the decision
+
+Name your project, list the options on the table, and add the factors that matter — or keep it simple with an overall comparison.
+
+2
+
+### Invite anyone
+
+Share a private link or send email invites. Participants need zero accounts and zero onboarding — they just click and go.
+
+3
+
+### Compare, one pair at a time
+
+Everyone answers simple head-to-head questions: “Which option is better for cost?” Ten seconds each, on any device.
+
+4
+
+### Get a defensible answer
+
+A statistically ranked result with confidence, agreement, and what drove the outcome — ready to present, share, or export.
+
+Why teams switch 
+
+## Your decision matrix, minus the spreadsheet fights
+
+A weighted decision matrix sounds rigorous — until five people invent scores from thin air, anchor on the loudest voice, and argue over cell C7. ChoiceBoard gets you the rigor without the theater.
+
+### No made-up numbers
+
+Nobody has to decide whether “flexibility” is a 7 or an 8. Simple either-or judgments do the work, and the model computes the scores.
+
+### No anchoring, no groupthink
+
+Everyone compares independently, so the quiet expert counts as much as the confident VP. Disagreement is surfaced, not steamrolled.
+
+### Weights earned, not guessed
+
+Factor importance comes from the same head-to-head process — so “what matters most” reflects your team, not one person's gut.
+
+Built for real groups 
+
+## Everyone weighs in. You stay in control.
+
+Collecting input shouldn't mean handing out admin access — or chasing people for a week. Invite participants with a link, and decide exactly what each person sees.
+
+### Frictionless participation
+
+No accounts, no downloads. Participants open a link on any device and answer one focused question at a time — with autosave and resume.
+
+### Tiered result access
+
+Compare only, compare and see your own results, or full report access. You choose per invite — and every link is revocable.
+
+### Live participation tracking
+
+See who's opened, who's mid-way, and who's done. Nudge the stragglers, close input on your deadline, and lock the result.
+
+The moment of truth 
+
+## Results you can defend in any boardroom
+
+“Trust me” isn't a methodology. ChoiceBoard's Bayesian ranking engine shows the answer *and* the evidence — so your decision survives the toughest question in the room: “How did you get this?”
+
+### A clear recommendation
+
+Pick-one projects surface a recommended option with its lead over the runner-up. Rank-all projects deliver a full priority order with natural tiers.
+
+### Confidence & agreement, quantified
+
+See how solid the ranking is, how aligned the group is, and exactly where people disagree — before you commit, not after.
+
+### What actually moved the needle
+
+Factor importance, differentiation, and decision leverage show which trade-offs drove the outcome — and which were noise.
+
+### Ready to present
+
+Preliminary vs. final states, print and export views, and controlled sharing — walk into the meeting with the answer, not another meeting.
+
+Informed meetings 
+
+## Walk in aligned. Talk about what actually matters.
+
+Most decision meetings are people trading opinions from memory. With ChoiceBoard, everyone arrives looking at the same collective ranking and factor weights — so the conversation is about real substance, not idiosyncratic takes, and its essence is captured.
+
+### One shared view of the group's thinking
+
+Collective rankings and factor weights on one screen — everyone sees the same evidence, so nobody's arguing from a different set of facts.
+
+### Spend the meeting on the real disagreements
+
+ChoiceBoard shows exactly where the group splits — so you skip the parts everyone already agrees on and dig into the trade-offs that matter.
+
+### The decision's essence, captured
+
+What was chosen, why, how confident the group was, and who disagreed — recorded and shareable, so nobody relitigates it in six weeks.
+
+Use cases 
+
+## One tool for every high-stakes choice
+
+If it has more than one option and more than one opinion, it belongs on a ChoiceBoard.
+
+### [Vendor & software selection](https://choiceboard.io/#pricing)
+
+Compare platforms, agencies, and implementation partners on the factors your team actually cares about — and document why you chose.
+
+### [Feature & roadmap prioritization](https://choiceboard.io/#pricing)
+
+Rank the backlog with input from product, engineering, and sales — and see where the org genuinely disagrees.
+
+### [Hiring decisions](https://choiceboard.io/#pricing)
+
+Turn panel gut-feel into structured candidate comparisons — consistent, bias-resistant, and easy to debrief.
+
+### [Budget & portfolio allocation](https://choiceboard.io/#pricing)
+
+Prioritize initiatives and investments with a ranking the whole leadership team helped build — and can stand behind.
+
+### [Naming & creative reviews](https://choiceboard.io/#pricing)
+
+Pick the logo, name, or campaign without the reply-all thread. Fast pairwise votes beat endless opinions.
+
+### [Strategy trade-offs](https://choiceboard.io/#pricing)
+
+Market entry, org design, build-vs-buy — structure the big calls so the debate is about substance, not volume.
+
+Pricing 
+
+## Every plan starts with a free trial
+
+Full access for 14 days. No credit card. If ChoiceBoard doesn't earn a place in how your team decides, walk away.
+
+### Starter
+
+For individuals and small teams making their first structured decisions.
+
+$0 /month
+
+- 2 active projects
+ 
+- Up to 20 responses
+ 
+- Pick-one & rank-all modes
+ 
+- Core results view
+
+ [Get started free](https://choiceboard.io/#pricing)
+
+Most popular 
+
+### Pro
+
+For teams that make real decisions every week and need the full evidence.
+
+$7 /month
+
+- Up to 5 project admins
+ 
+- Unlimited projects & participants
+ 
+- Full results suite — confidence, agreement, factor leverage
+ 
+- Tiered share links & email invitations
+ 
+- Templates, exports & presentation view
+ 
+- Deadlines & participation tracking
+
+ [Start 14-day free trial](https://choiceboard.io/#pricing)
+
+### Team
+
+For organizations that want decisions as a repeatable operating system.
+
+$29 /month
+
+- Everything in Pro
+ 
+- Unlimited admins & participants
+ 
+- Workspace admin & roles
+ 
+- API access & integrations
+ 
+- Custom branding
+ 
+- Priority support
+
+ [Start free trial](https://choiceboard.io/#pricing)
+
+Questions about plans? [Read the FAQ](https://choiceboard.io/#faq) — or just start the trial and see for yourself.
+
+FAQ 
+
+## Frequently asked questions
+
+What is group decision-making software?
+
+It's software that gives a team a structured way to choose between options together. Instead of long meetings and biased spreadsheets, ChoiceBoard collects each person's input through simple head-to-head comparisons and combines them into a single ranked result — with confidence and agreement metrics so you know how solid the answer is.
+
+How is ChoiceBoard different from a weighted decision matrix spreadsheet?
+
+A weighted decision matrix combines scores for options with weights for criteria. ChoiceBoard collects head-to-head comparisons instead of asking participants for numeric scores. The result includes a ranking and a measured level of agreement. ChoiceBoard doesn’t hide disagreement, it measures it.
+
+What is pairwise comparison?
+
+A pairwise comparison is a judgment between two options at a time. In ChoiceBoard, participants answer head-to-head questions about options and factors. The comparisons contribute to a ranked result with a measured level of agreement.
+
+Do participants need an account to give input?
+
+No. You invite participants with a private share link or email invitation. They open it on any device, answer one question at a time, and are done in minutes. You control exactly what each person can see — from compare-only up to the full results report — and every link can be revoked or expired.
+
+What kinds of decisions is ChoiceBoard good for?
+
+Any decision with multiple options and multiple stakeholders: vendor and software selection, feature and roadmap prioritization, hiring panels, budget allocation, naming and creative reviews, and strategy trade-offs. Use Pick-one mode when you need a single winner, or Rank-all mode when you need a full priority order.
+
+How does the free trial work?
+
+Every plan starts with a 14-day free trial with full access — projects, unlimited participants, and the complete results suite. No credit card required. You only pay if ChoiceBoard earns a place in how your team decides.
+
+Ready when you are 
+
+## Your next big decision deserves better than a meeting
+
+Set up your first project in two minutes. Invite your team. Get an answer everyone can stand behind.
+
+ [Start your free trial →](https://choiceboard.io/#pricing) 
+
+14-day free trial·No credit card·Cancel anytime

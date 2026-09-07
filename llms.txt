@@ -1,0 +1,11 @@
+# ChoiceBoard
+
+ChoiceBoard is group decision-making software. Teams define options and factors, answer quick head-to-head comparisons, and get a ranked result with a measured level of agreement — a decision they can defend.
+
+## Website
+
+- [ChoiceBoard](https://choiceboard.io/): Product overview, how it works, and pricing.
+
+## Published articles
+
+No articles have been published yet.

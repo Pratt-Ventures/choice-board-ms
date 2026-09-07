@@ -434,17 +434,21 @@ Rules:
 
 ### Current state of the repo
 
-Today the repo is a single static landing page deployed via GitHub Pages
-(`CNAME` → `choiceboard.io`, no build step, no package manager). Nothing
-below the line exists yet. **Before the first post, create the blog
-scaffold and the tools listed here.** Until a tool exists, do its job by
-hand and say so in your summary.
+The site is static HTML deployed via GitHub Pages (`CNAME` → `choiceboard.io`,
+no deployment build step). As of September 7, 2026, the blog hub, six series
+pages, article/video/story templates, and the five publishing tools below exist.
+The hub, series pages, and templates remain `noindex`; no articles have been
+published. See `tools/README.md` for operation and manual publication steps,
+`seo/keyword-plan.md` for query ownership, and `seo/audit-2026-09-07.md` for
+remaining editorial and account-dependent checks. The checker reports automated
+errors separately from required human review; zero errors is not publication
+approval.
 
 ```
 index.html                     Landing page (SEO head, inline CSS, markup, inline JS)
 CNAME, robots.txt, sitemap.xml GitHub Pages + crawler files
 logo.svg, logo.png, og-image.png
-──────────────── to be created ────────────────
+──────────────── publishing foundation ────────────────
 blog/index.html                Blog hub (featured post + card grid)
 blog/<series>/index.html       Series page with ItemList JSON-LD
 blog/<series>/<slug>/index.html  Article (noindex until go-live)
@@ -487,8 +491,9 @@ posts.
   on them.
 - Pricing: Starter $0, Pro $7, Team $29. If pricing changes on the landing
   page, grep every post for the old figure the same day.
-- The landing page's testimonials are placeholders. Never quote them, and
-  never reference a customer that does not exist.
+- The placeholder testimonials were removed from the local landing page in the
+  September 7 SEO foundation pass. Never restore or quote them as customer
+  evidence, and never reference a customer that does not exist.
 - The hero duel copy is the canonical example of the voice.
 
 ## 18. AI search engines and multi-model assistants

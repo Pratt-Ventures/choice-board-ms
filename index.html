@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-US">
 <head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZLZMXRHMBS"></script>
@@ -15,9 +15,9 @@
 
   <!-- ===== Primary SEO ===== -->
   <title>ChoiceBoard — Group Decision-Making Software for Teams</title>
-  <meta name="description" content="ChoiceBoard is group decision-making software for faster decisions and better buy-in. Compare options head-to-head, weigh what matters, and get a ranked result your team trusts. Start your free trial." />
+  <meta name="description" content="Group decision-making software for teams. Compare options head-to-head, weigh factors, and get a ranked result with a measured level of agreement you can defend." />
   <link rel="canonical" href="https://choiceboard.io/" />
-  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="theme-color" content="#4059D8" />
 
   <!-- ===== Open Graph / Twitter ===== -->
@@ -48,72 +48,99 @@
 
   <!-- ===== Structured data ===== -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "ChoiceBoard",
-    "url": "https://choiceboard.io/",
-    "logo": "https://choiceboard.io/logo.png",
-    "description": "Group decision-making software for teams. Compare options, weigh factors, and reach clear, defensible decisions together."
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "ChoiceBoard",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web",
-    "url": "https://choiceboard.io/",
-    "description": "ChoiceBoard is collaborative decision-making software. Teams define options and factors, answer simple head-to-head comparisons, and get a ranked, statistically grounded result with confidence and agreement insights.",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "description": "14-day free trial. No credit card required."
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "ChoiceBoard",
+      "url": "https://choiceboard.io/",
+      "logo": "https://choiceboard.io/logo.png",
+      "description": "ChoiceBoard is group decision-making software. Teams define options and factors, answer quick head-to-head comparisons, and get a ranked result with a measured level of agreement — a decision they can defend.",
+      "@id": "https://choiceboard.io/#organization"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://choiceboard.io/#website",
+      "url": "https://choiceboard.io/",
+      "name": "ChoiceBoard",
+      "publisher": {
+        "@id": "https://choiceboard.io/#organization"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "ChoiceBoard",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "url": "https://choiceboard.io/",
+      "description": "ChoiceBoard is group decision-making software. Teams define options and factors, answer quick head-to-head comparisons, and get a ranked result with a measured level of agreement — a decision they can defend.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "14-day free trial. No credit card required."
+      },
+      "@id": "https://choiceboard.io/#software"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is group decision-making software?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It's software that gives a team a structured way to choose between options together. Instead of long meetings and biased spreadsheets, ChoiceBoard collects each person's input through simple head-to-head comparisons and combines them into a single ranked result — with confidence and agreement metrics so you know how solid the answer is."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is ChoiceBoard different from a weighted decision matrix spreadsheet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A weighted decision matrix combines scores for options with weights for criteria. ChoiceBoard collects head-to-head comparisons instead of asking participants for numeric scores. The result includes a ranking and a measured level of agreement. ChoiceBoard doesn’t hide disagreement, it measures it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is pairwise comparison?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A pairwise comparison is a judgment between two options at a time. In ChoiceBoard, participants answer head-to-head questions about options and factors. The comparisons contribute to a ranked result with a measured level of agreement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do participants need an account to give input?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. You invite participants with a private share link or email invitation. They open it on any device, answer one question at a time, and are done in minutes. You control exactly what each person can see — from compare-only up to the full results report — and every link can be revoked or expired."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What kinds of decisions is ChoiceBoard good for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Any decision with multiple options and multiple stakeholders: vendor and software selection, feature and roadmap prioritization, hiring panels, budget allocation, naming and creative reviews, and strategy trade-offs. Use Pick-one mode when you need a single winner, or Rank-all mode when you need a full priority order."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the free trial work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every plan starts with a 14-day free trial with full access — projects, unlimited participants, and the complete results suite. No credit card required. You only pay if ChoiceBoard earns a place in how your team decides."
+          }
+        }
+      ]
     }
-  }
+  ]
+}
   </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is group decision-making software?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Group decision-making software gives a team a structured way to choose between options together. Instead of long meetings and biased spreadsheets, ChoiceBoard collects each person's input through simple head-to-head comparisons and combines them into a single ranked result with confidence and agreement metrics." }
-      },
-      {
-        "@type": "Question",
-        "name": "How is ChoiceBoard different from a weighted decision matrix spreadsheet?",
-        "acceptedAnswer": { "@type": "Answer", "text": "A weighted decision matrix asks people to invent numeric scores, which anchors on the loudest voice and hides disagreement. ChoiceBoard asks a series of simple either-or questions — which option is better for this factor? — and uses a statistical ranking model to compute scores, weights, confidence, and where people disagree. You get the rigor of a decision matrix without the spreadsheet fights." }
-      },
-      {
-        "@type": "Question",
-        "name": "What is pairwise comparison?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Pairwise comparison is a decision-making method where you judge two options at a time instead of scoring everything at once. It is easier, faster, and dramatically more consistent than rating scales. ChoiceBoard's adaptive engine picks the most informative pair to ask next, so participants answer fewer questions to reach a reliable ranking." }
-      },
-      {
-        "@type": "Question",
-        "name": "Do participants need an account to give input?",
-        "acceptedAnswer": { "@type": "Answer", "text": "No. You invite participants with a private share link or email invitation. They open the link, answer one question at a time on any device, and are done in minutes. You control exactly what each participant can see — from compare-only to the full results report." }
-      },
-      {
-        "@type": "Question",
-        "name": "What kinds of decisions is ChoiceBoard good for?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Any decision with multiple options and multiple stakeholders: vendor and software selection, feature and roadmap prioritization, hiring panels, budget allocation, naming and creative reviews, strategy trade-offs, and portfolio ranking. Use Pick-one mode for a single winner or Rank-all mode for a full priority order." }
-      },
-      {
-        "@type": "Question",
-        "name": "How does the free trial work?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Every plan starts with a 14-day free trial with full access to projects, unlimited participants, and the complete results suite. No credit card required — you only pay if ChoiceBoard earns a place in how your team decides." }
-      }
-    ]
-  }
-  </script>
-
-  <style>
+<style>
     :root{
       --brand:#3F5AD9; --brand-2:#6F7FF2; --accent:#14967F;
       --ink:#152033; --navy:#172554; --muted:#5B6779; --faint:#8A94A6;
@@ -268,7 +295,7 @@
     /* compare viz */
     .q-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow-sm)}
     .q-card .q-factor{font:700 10.5px/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
-    .q-card h4{font:800 19px/1.3 var(--font-head);margin-bottom:18px}
+    .q-card .mock-label{font:800 19px/1.3 var(--font-head);margin-bottom:18px}
     .duel{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     .duel .opt{border:1.5px solid var(--line);border-radius:13px;padding:18px 14px;text-align:center;font:700 14px/1.3 var(--font-body);cursor:pointer;background:var(--cream);transition:.15s}
     .duel .opt.on{border-color:var(--brand);background:#EEF1FF;color:var(--brand);box-shadow:0 6px 16px rgba(64,89,216,.14)}
@@ -345,7 +372,7 @@
     /* ===== Footer ===== */
     .footer{background:var(--cream);border-top:1px solid var(--line);padding:70px 0 40px;font-size:14px;color:var(--muted)}
     .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
-    .foot-grid h4{font:800 12.5px/1 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:18px}
+    .foot-grid .mock-label{font:800 12.5px/1 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:18px}
     .foot-grid ul{list-style:none;display:grid;gap:11px}
     .foot-grid a:hover{color:var(--brand)}
     .foot-brand p{margin-top:14px;max-width:280px}
@@ -387,6 +414,8 @@
     .mobile-nav a{padding:13px 0;font:600 16px/1 var(--font-body);border-bottom:1px solid var(--soft)}
     .mobile-nav .btn{margin-top:14px;justify-content:center}
     @media(min-width:1001px){.mobile-nav{display:none!important}}
+      .mock-label{font-family:var(--font-head);font-weight:800;line-height:1.2}
+    @media(max-width:1000px){html:not(.js) .mobile-nav{display:flex;position:static;box-shadow:none}html:not(.js) .menu-btn{display:none}}
   </style>
 </head>
 <body>
@@ -432,10 +461,10 @@
       <div class="wrap">
         <span class="eyebrow"><span class="dot-pulse"></span> Group decision-making software</span>
         <h1>Stop debating.<br><span class="u">Start deciding.</span></h1>
-        <p class="hero-sub">ChoiceBoard helps teams make decisions of every size faster — with better buy-in and less headache. Simple head-to-head questions replace the meetings, spreadsheets, and loudest-voice-wins.</p>
+        <p class="hero-sub">ChoiceBoard is group decision-making software. Teams define options and factors, answer quick head-to-head comparisons, and get a ranked result with a measured level of agreement — a decision they can defend.</p>
 
         <!-- The duel: an actual pairwise comparison the visitor can play -->
-        <div class="duel-wrap">
+        <div class="duel-wrap" data-export-exclude>
           <div class="duel-stage" id="duelStage">
             <span class="try-tag">▶ Try it — this is the actual product mechanic</span>
 
@@ -454,7 +483,7 @@
 
             <div class="duel-result" id="duelResult">
               <span class="dr-kicker" id="drKicker">Recommended option</span>
-              <h3 class="dr-title" id="drTitle">ChoiceBoard</h3>
+              <p class="dr-title" id="drTitle">ChoiceBoard</p>
               <p class="dr-sub" id="drSub">You just made three comparisons in about fifteen seconds. That's the entire product — now imagine it with your whole team and a decision that actually matters.</p>
               <div class="dr-meter">
                 <div class="track"><div class="fill" id="drFill" style="width:0%"></div></div>
@@ -542,10 +571,10 @@
             </div>
           </div>
         </div>
-        <div class="viz">
+        <div class="viz" data-export-exclude>
           <div class="q-card">
             <div class="q-factor">Factor · Total cost</div>
-            <h4>Which option is better for total cost?</h4>
+            <p class="mock-label">Which option is better for total cost?</p>
             <div class="duel">
               <div class="opt on">Atlas Support Cloud</div>
               <div class="opt">HelixDesk Pro</div>
@@ -563,7 +592,7 @@
     <!-- ===================== FEATURES: ENGINE ===================== -->
     <section id="features" style="padding-top:0">
       <div class="wrap split rev reveal">
-        <div class="viz">
+        <div class="viz" data-export-exclude>
           <div class="share-viz">
             <div class="share-row">
               <div class="av" style="background:linear-gradient(140deg,var(--brand-2),var(--brand))">JM</div>
@@ -633,10 +662,10 @@
             </div>
           </div>
         </div>
-        <div class="viz" aria-hidden="true">
+        <div class="viz" aria-hidden="true" data-export-exclude>
           <div class="q-card" style="padding:22px">
             <div class="shot-head" style="margin-bottom:14px">
-              <div><h4 style="font-size:16px">Overall ranking</h4><small style="font:500 11.5px/1.4 var(--font-body);color:var(--faint)">Weighted by what matters most</small></div>
+              <div><p class="mock-label" style="font-size:16px">Overall ranking</p><small style="font:500 11.5px/1.4 var(--font-body);color:var(--faint)">Weighted by what matters most</small></div>
               <span class="chip" style="background:#EDF0FF;color:var(--brand)">Final</span>
             </div>
             <div class="bars" style="margin-top:6px">
@@ -663,10 +692,10 @@
     <!-- ===================== FEATURES: INFORMED MEETINGS ===================== -->
     <section style="padding-top:0">
       <div class="wrap split rev reveal">
-        <div class="viz" aria-hidden="true">
+        <div class="viz" aria-hidden="true" data-export-exclude>
           <div class="q-card" style="padding:22px">
             <div class="shot-head" style="margin-bottom:14px">
-              <div><h4 style="font-size:16px">Meeting view — shared with everyone</h4><small style="font:500 11.5px/1.4 var(--font-body);color:var(--faint)">Collective ranking · factor weights · open disagreements</small></div>
+              <div><p class="mock-label" style="font-size:16px">Meeting view — shared with everyone</p><small style="font:500 11.5px/1.4 var(--font-body);color:var(--faint)">Collective ranking · factor weights · open disagreements</small></div>
               <span class="chip">Live</span>
             </div>
             <div class="bars" style="margin-top:6px">
@@ -745,42 +774,7 @@
       </div>
     </section>
 
-    <!-- ===================== TESTIMONIALS (placeholder copy) ===================== -->
-    <section>
-      <div class="wrap">
-        <div class="center reveal">
-          <span class="kicker accent-k">What teams say</span>
-          <h2>Loved by the person who has to make the call</h2>
-        </div>
-        <!-- Placeholder testimonials — replace with real customer quotes before launch -->
-        <div class="quotes reveal">
-          <figure class="quote">
-            <div class="stars" aria-hidden="true">★★★★★</div>
-            <p>“We'd been circling the same vendor decision for six weeks. ChoiceBoard got twelve stakeholders through it in three days — and nobody relitigated it afterward, because everyone could see exactly how we got there.”</p>
-            <figcaption class="who">
-              <div class="av" style="background:linear-gradient(140deg,var(--brand-2),var(--brand))">SR</div>
-              <div><b>Placeholder — S.R.</b><small>VP of Operations, mid-market SaaS</small></div>
-            </figcaption>
-          </figure>
-          <figure class="quote">
-            <div class="stars" aria-hidden="true">★★★★★</div>
-            <p>“The pairwise flow is the trick. Asking my team to score a matrix got me garbage data. Asking them ‘which is better for cost?’ fifty quick times got me a ranking I actually believe.”</p>
-            <figcaption class="who">
-              <div class="av" style="background:linear-gradient(140deg,#2fb39a,var(--accent))">MT</div>
-              <div><b>Placeholder — M.T.</b><small>Head of Product, Series B startup</small></div>
-            </figcaption>
-          </figure>
-          <figure class="quote">
-            <div class="stars" aria-hidden="true">★★★★★</div>
-            <p>“I present the results page directly to our exec team. Recommendation, confidence, where people disagreed — it's all there. It made our prioritization defensible for the first time.”</p>
-            <figcaption class="who">
-              <div class="av" style="background:linear-gradient(140deg,#f0b35c,var(--warn))">JC</div>
-              <div><b>Placeholder — J.C.</b><small>Director of Strategy, professional services</small></div>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
+    <!-- Customer testimonials will be added after source verification and permission. -->
 
     <!-- ===================== PRICING ===================== -->
     <section class="pricing" id="pricing">
@@ -801,7 +795,7 @@
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#14967F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Pick-one &amp; rank-all modes</li>
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#14967F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Core results view</li>
             </ul>
-            <a class="btn btn-ghost" href="#">Get started free</a>
+            <a class="btn btn-ghost" href="/#pricing">Get started free</a>
           </div>
           <div class="plan hot">
             <span class="flag">Most popular</span>
@@ -816,7 +810,7 @@
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#14967F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Templates, exports &amp; presentation view</li>
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#14967F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Deadlines &amp; participation tracking</li>
             </ul>
-            <a class="btn btn-primary" href="#">Start 14-day free trial</a>
+            <a class="btn btn-primary" href="/#pricing">Start 14-day free trial</a>
           </div>
           <div class="plan">
             <h3>Team</h3>
@@ -830,7 +824,7 @@
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#14967F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Custom branding</li>
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#14967F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Priority support</li>
             </ul>
-            <a class="btn btn-ghost" href="#">Start free trial</a>
+            <a class="btn btn-ghost" href="/#pricing">Start free trial</a>
           </div>
         </div>
         <p class="trial-note">Questions about plans? <a href="#faq" style="color:var(--brand);font-weight:700">Read the FAQ</a> — or just start the trial and see for yourself.</p>
@@ -851,11 +845,11 @@
           </details>
           <details>
             <summary>How is ChoiceBoard different from a weighted decision matrix spreadsheet? <span class="plus">+</span></summary>
-            <p class="a">A weighted decision matrix asks people to invent numeric scores, which anchors on the loudest voice and hides disagreement. ChoiceBoard asks a series of simple either-or questions — “which option is better for this factor?” — and uses a statistical ranking model to compute scores, weights, confidence, and where people disagree. You get the rigor of a decision matrix without the spreadsheet fights.</p>
+            <p class="a">A weighted decision matrix combines scores for options with weights for criteria. ChoiceBoard collects head-to-head comparisons instead of asking participants for numeric scores. The result includes a ranking and a measured level of agreement. ChoiceBoard doesn’t hide disagreement, it measures it.</p>
           </details>
           <details>
-            <summary>What is pairwise comparison, and why does it work better? <span class="plus">+</span></summary>
-            <p class="a">Pairwise comparison means judging two options at a time instead of scoring everything at once. Humans are far more consistent at “A vs. B” than at absolute ratings. ChoiceBoard's adaptive engine picks the most informative pair to ask next, so participants answer fewer questions to reach a reliable ranking — usually just a few minutes of input each.</p>
+            <summary>What is pairwise comparison? <span class="plus">+</span></summary>
+            <p class="a">A pairwise comparison is a judgment between two options at a time. In ChoiceBoard, participants answer head-to-head questions about options and factors. The comparisons contribute to a ranked result with a measured level of agreement.</p>
           </details>
           <details>
             <summary>Do participants need an account to give input? <span class="plus">+</span></summary>
@@ -902,7 +896,7 @@
           <p>Group decision-making software for teams that would rather decide than debate.</p>
         </div>
         <div>
-          <h4>Product</h4>
+          <p class="mock-label">Product</p>
           <ul>
             <li><a href="#how-it-works">How it works</a></li>
             <li><a href="#features">Features</a></li>
@@ -912,7 +906,7 @@
           </ul>
         </div>
         <div>
-          <h4>Solutions</h4>
+          <p class="mock-label">Solutions</p>
           <ul>
             <li><a href="#use-cases">Vendor selection tool</a></li>
             <li><a href="#use-cases">Feature prioritization</a></li>
@@ -922,7 +916,7 @@
           </ul>
         </div>
         <div>
-          <h4>Company</h4>
+          <p class="mock-label">Company</p>
           <ul>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>

@@ -1,0 +1,2 @@
+# Only social-images.py needs a third-party package. Other publishing tools use Python 3.9+ stdlib.
+Pillow>=10.4,<13
