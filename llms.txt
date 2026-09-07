@@ -8,4 +8,6 @@ ChoiceBoard is group decision-making software. Teams define options and factors,
 
 ## Published articles
 
-No articles have been published yet.
+- [Group decision making process for teams](https://choiceboard.io/blog/guides/group-decision-making-process/): A group decision making process that clarifies roles, compares options, and records dissent. Follow the steps to document a choice your team can explain.
+- [Pairwise comparison method for team decisions](https://choiceboard.io/blog/guides/pairwise-comparison-method/): The pairwise comparison method evaluates two options at a time. Learn how to compare pairs, count questions, and recognize inconsistent preferences in teams.
+- [Decision matrix template for team choices](https://choiceboard.io/blog/templates/decision-matrix-template/): Use this decision matrix template to compare team options with weighted criteria. Download the workbook, follow the example, and record evidence and dissent.

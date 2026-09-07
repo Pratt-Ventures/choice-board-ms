@@ -7,6 +7,26 @@
     <description>Guides, templates, and comparisons on group decision-making for teams: how to compare options, weigh what matters, surface disagreement, and reach a ranked result you can defend.</description>
     <language>en-us</language>
     <lastBuildDate>Mon, 07 Sep 2026 00:00:00 +0000</lastBuildDate>
-    <!-- Items are added at go-live for each indexed post (AGENTS.md §19). -->
+    <item>
+      <title>Group decision making process for teams</title>
+      <link>https://choiceboard.io/blog/guides/group-decision-making-process/</link>
+      <guid isPermaLink="true">https://choiceboard.io/blog/guides/group-decision-making-process/</guid>
+      <description>Use this group decision making process to define authority, compare options, surface dissent, and record a clear final call your team can explain.</description>
+      <pubDate>Mon, 07 Sep 2026 13:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Decision matrix template for team choices</title>
+      <link>https://choiceboard.io/blog/templates/decision-matrix-template/</link>
+      <guid isPermaLink="true">https://choiceboard.io/blog/templates/decision-matrix-template/</guid>
+      <description>Download a decision matrix template, set clear weights, score options consistently, and test how assumptions change a team’s ranked result.</description>
+      <pubDate>Mon, 07 Sep 2026 13:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Pairwise comparison method for team decisions</title>
+      <link>https://choiceboard.io/blog/guides/pairwise-comparison-method/</link>
+      <guid isPermaLink="true">https://choiceboard.io/blog/guides/pairwise-comparison-method/</guid>
+      <description>The pairwise comparison method evaluates two options at a time. Learn how to compare pairs, count questions, and recognize inconsistent preferences in teams.</description>
+      <pubDate>Mon, 07 Sep 2026 13:00:00 +0000</pubDate>
+    </item>
   </channel>
 </rss>

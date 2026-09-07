@@ -1,5 +1,3 @@
-> Draft — not published.
-
 [Templates](https://choiceboard.io/blog/templates/)
 
 # Decision matrix template for team choices
@@ -8,7 +6,7 @@ You have a shortlist, but each person is judging it against a different standard
 
 **The ChoiceBoard team** · 5-minute read
 
-Publication pending approval · Draft prepared September 7, 2026 · Updated September 7, 2026
+Published September 7, 2026 · Updated September 7, 2026
 
 **Key takeaways**
 

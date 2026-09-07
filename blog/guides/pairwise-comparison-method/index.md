@@ -1,5 +1,3 @@
-> Draft — not published.
-
 [Guides](https://choiceboard.io/blog/guides/)
 
 # Pairwise comparison method for team decisions
@@ -8,7 +6,7 @@ Your team can discuss every option and still leave the ordering unresolved. The 
 
 **The ChoiceBoard team** · 5-minute read
 
-Publication pending approval · Draft prepared September 7, 2026 · Updated September 7, 2026
+Published September 7, 2026 · Updated September 7, 2026
 
 **Key takeaways**
 
