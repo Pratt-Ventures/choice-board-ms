@@ -19,6 +19,43 @@
 
   gtag('config', 'G-ZLZMXRHMBS');
 </script>
+<!-- CTA conversion tracking (GA4) — sends cta_click / select_plan / file_download -->
+<script>
+  (function () {
+    var norm = function (s) { return (s || '').replace(/\s+/g, ' ').trim().slice(0, 100); };
+    document.addEventListener('click', function (event) {
+      var link = event.target.closest ? event.target.closest('a[href]') : null;
+      if (!link || typeof gtag !== 'function') return;
+      var isCta = link.classList.contains('btn');
+      var plan = link.closest('.plan');
+      var href = link.getAttribute('href') || '';
+      var download = link.hasAttribute('download');
+      if (!isCta && !download) return;
+
+      var section = link.closest('[id]');
+      var params = {
+        cta_label: norm(link.textContent),
+        cta_location: section ? section.id : 'page',
+        cta_destination: link.href,
+        page_path: location.pathname
+      };
+      if (download) {
+        gtag('event', 'file_download', {
+          file_name: href.split('/').pop(),
+          link_text: params.cta_label,
+          page_path: params.page_path
+        });
+        return;
+      }
+      if (plan && plan.querySelector('h3')) {
+        params.plan_name = norm(plan.querySelector('h3').textContent);
+        gtag('event', 'select_plan', params);
+      }
+      gtag('event', 'cta_click', params);
+    }, true);
+  })();
+</script>
+<script src="https://app.rybbit.io/api/script.js?siteId=564788f6f73e" defer></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pairwise comparison method for team decisions | ChoiceBoard</title>
@@ -225,7 +262,7 @@
 <p>ChoiceBoard collects head-to-head input about options and factors and returns a ranked result with a measured level of agreement. The ranking describes the resulting order; the agreement measure addresses alignment. The person who has to make the call still interprets the result.</p>
 <blockquote><p>ChoiceBoard doesn’t hide disagreement, it measures it.</p><footer>The ChoiceBoard team</footer></blockquote>
 <p>Put the comparisons inside a clear <a href="/blog/guides/group-decision-making-process/">group decision-making process</a>. Define who owns the outcome, how participants contribute, and what the final record needs to explain.</p></section><section class="faq"><h2>Frequently asked questions</h2><details><summary>How many pairs are there for five options?</summary><p>There are 10 distinct pairs: 5 × 4 ÷ 2. This assumes every pair is compared once for one question. It is not a promised question count for a particular product.</p></details><details><summary>Does pairwise comparison always produce a clear winner?</summary><p>No. Preferences can tie or form a cycle, and different participants can disagree. The result depends on the judgments collected and the method used to combine them.</p></details><details><summary>What is a preference cycle?</summary><p>A preference cycle occurs when the judgments loop back on themselves, such as A preferred to B, B to C, and C to A. Those judgments do not form one consistent ordering.</p></details><details><summary>Is this manual example ChoiceBoard’s ranking algorithm?</summary><p>No. The example illustrates pairwise judgments and a simple consistency check. ChoiceBoard’s supplied product description promises a ranked result with a measured level of agreement; this guide does not specify its ranking algorithm.</p></details></section><section class="authorcard"><h2>About the author</h2><p><strong>The ChoiceBoard team</strong></p><p>We write about how teams compare options, weigh factors, and reach a decision they can explain. Sources for the factual claims are linked in the article; practical recommendations are identified as our guidance.</p><p class="source-date">Sources reviewed September 7, 2026.</p></section>
- <p><a class="btn btn-primary" href="/#pricing">Start your free trial</a></p></article></main>
+ <p><a class="btn btn-primary" href="/#pricing">Start free</a></p></article></main>
 <footer class="simple-footer"><div class="wrap"><p>Group decision-making software for teams.</p><a href="/">ChoiceBoard home</a> · <a href="/blog/">All series</a></div></footer>
 </body>
 </html>

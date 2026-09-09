@@ -10,9 +10,9 @@ Group decision-making software
 
 ChoiceBoard is group decision-making software. Teams define options and factors, answer quick head-to-head comparisons, and get a ranked result with a measured level of agreement — a decision they can defend.
 
-[Start your free trial →](https://choiceboard.io/#pricing) [See how it works](https://choiceboard.io/#how-it-works)
+[Start free →](https://choiceboard.io/#pricing) [See how it works](https://choiceboard.io/#how-it-works)
 
-14-day free trial No credit card required Unlimited participants
+Free tier No credit card 20 responses
 
 **~10*s***per comparison — one simple question at a time
 
@@ -160,9 +160,9 @@ Market entry, org design, build-vs-buy — structure the big calls so the debate
 
 Pricing 
 
-## Every plan starts with a free trial
+## Start with the free tier
 
-Full access for 14 days. No credit card. If ChoiceBoard doesn't earn a place in how your team decides, walk away.
+Use ChoiceBoard for free, then upgrade when your team needs more projects, admins, or advanced results.
 
 ### Starter
 
@@ -200,7 +200,7 @@ $7 /month
  
 - Deadlines & participation tracking
 
- [Start 14-day free trial](https://choiceboard.io/#pricing)
+ [Choose Pro](https://choiceboard.io/#pricing)
 
 ### Team
 
@@ -220,9 +220,9 @@ $29 /month
  
 - Priority support
 
- [Start free trial](https://choiceboard.io/#pricing)
+ [Choose Team](https://choiceboard.io/#pricing)
 
-Questions about plans? [Read the FAQ](https://choiceboard.io/#faq) — or just start the trial and see for yourself.
+Questions about plans? [Read the FAQ](https://choiceboard.io/#faq) — or just start free and see for yourself.
 
 FAQ 
 
@@ -248,9 +248,9 @@ What kinds of decisions is ChoiceBoard good for?
 
 Any decision with multiple options and multiple stakeholders: vendor and software selection, feature and roadmap prioritization, hiring panels, budget allocation, naming and creative reviews, and strategy trade-offs. Use Pick-one mode when you need a single winner, or Rank-all mode when you need a full priority order.
 
-How does the free trial work?
+How does the free tier work?
 
-Every plan starts with a 14-day free trial with full access — projects, unlimited participants, and the complete results suite. No credit card required. You only pay if ChoiceBoard earns a place in how your team decides.
+The Starter plan is a free tier for individuals and small teams. It includes 2 active projects, up to 20 responses, Pick-one and Rank-all modes, and the core results view. Upgrade when you need more projects, more admins, unlimited participants, or the full results suite.
 
 Ready when you are 
 
@@ -258,9 +258,9 @@ Ready when you are
 
 Set up your first project in two minutes. Invite your team. Get an answer everyone can stand behind.
 
- [Start your free trial →](https://choiceboard.io/#pricing) 
+ [Start free →](https://choiceboard.io/#pricing) 
 
-14-day free trial·No credit card·Cancel anytime
+Free tier·20 responses·No credit card
 
 ---
 
@@ -374,7 +374,7 @@ We write about how teams compare options, weigh factors, and reach a decision th
 
 Sources reviewed September 7, 2026.
 
-[Start your free trial](https://choiceboard.io/#pricing)
+[Start free](https://choiceboard.io/#pricing)
 
 ---
 
@@ -500,7 +500,7 @@ We write about how teams compare options, weigh factors, and reach a decision th
 
 Sources reviewed September 7, 2026.
 
-[Start your free trial](https://choiceboard.io/#pricing)
+[Start free](https://choiceboard.io/#pricing)
 
 ---
 
@@ -625,4 +625,4 @@ We write about how teams compare options, weigh factors, and reach a decision th
 
 Sources reviewed September 7, 2026.
 
-[Start your free trial](https://choiceboard.io/#pricing)
+[Start free](https://choiceboard.io/#pricing)

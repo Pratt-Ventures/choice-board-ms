@@ -10,7 +10,7 @@ drafting. This approval covers the facts below, not publication.
   nothing may be fabricated.
 - Visuals: generated cards consistent with the existing design. Use the site's
   Manrope/Inter typography, brand tokens, and existing ChoiceBoard mark.
-- Primary CTA: free trial, linking to `/#pricing`.
+- Primary CTA: free tier, linking to `/#pricing`.
 - Working briefs: the three articles proposed in the conversation and keyword
   plan, with their existing series, angles, and primary queries retained.
 

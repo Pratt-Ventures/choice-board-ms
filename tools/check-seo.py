@@ -82,6 +82,7 @@ class Check:
             src = script.attrs.get('src', '')
             self.require(not src or src in {
                          f'https://www.googletagmanager.com/gtag/js?id={GA}',
+                         'https://app.rybbit.io/api/script.js?siteId=564788f6f73e',
                          '//script.crazyegg.com/pages/scripts/0050/2077.js'},
                          label, 'unapproved external JavaScript: ' + src)
         self.require(not page.tree.all('iframe'), label, 'use a click-through video facade; no preloaded embeds')

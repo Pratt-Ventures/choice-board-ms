@@ -106,4 +106,4 @@ We write about how teams compare options, weigh factors, and reach a decision th
 
 Sources reviewed September 7, 2026.
 
-[Start your free trial](https://choiceboard.io/#pricing)
+[Start free](https://choiceboard.io/#pricing)

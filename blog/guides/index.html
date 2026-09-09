@@ -10,6 +10,43 @@
 
   gtag('config', 'G-ZLZMXRHMBS');
 </script>
+<!-- CTA conversion tracking (GA4) — sends cta_click / select_plan / file_download -->
+<script>
+  (function () {
+    var norm = function (s) { return (s || '').replace(/\s+/g, ' ').trim().slice(0, 100); };
+    document.addEventListener('click', function (event) {
+      var link = event.target.closest ? event.target.closest('a[href]') : null;
+      if (!link || typeof gtag !== 'function') return;
+      var isCta = link.classList.contains('btn');
+      var plan = link.closest('.plan');
+      var href = link.getAttribute('href') || '';
+      var download = link.hasAttribute('download');
+      if (!isCta && !download) return;
+
+      var section = link.closest('[id]');
+      var params = {
+        cta_label: norm(link.textContent),
+        cta_location: section ? section.id : 'page',
+        cta_destination: link.href,
+        page_path: location.pathname
+      };
+      if (download) {
+        gtag('event', 'file_download', {
+          file_name: href.split('/').pop(),
+          link_text: params.cta_label,
+          page_path: params.page_path
+        });
+        return;
+      }
+      if (plan && plan.querySelector('h3')) {
+        params.plan_name = norm(plan.querySelector('h3').textContent);
+        gtag('event', 'select_plan', params);
+      }
+      gtag('event', 'cta_click', params);
+    }, true);
+  })();
+</script>
+<script src="https://app.rybbit.io/api/script.js?siteId=564788f6f73e" defer></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Decision-making guides | ChoiceBoard</title>

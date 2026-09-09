@@ -188,7 +188,7 @@ Ask in one message and wait for the answers:
 8. For customer stories: the customer's name, company, role, written
    permission to publish, and the quotes they approved.
 9. OG / social image source: provided file, product screenshot, or generated card.
-10. Call to action (default: free trial, see §14).
+10. Call to action (default: free tier, see §14).
 
 ## 9. Per-article meta block
 
@@ -359,13 +359,13 @@ JSON-LD that isn't visible on the page.
 
 ## 14. Calls to action
 
-- **Default CTA:** free trial. The landing page promises a 14-day free trial
-  with no credit card. **The signup URL does not exist yet.** Until it is
+- **Default CTA:** free tier. The landing page includes a free Starter plan
+  with 20 responses and no credit card required. **The signup URL does not exist yet.** Until it is
   recorded here, every CTA links to `/#pricing`. When the app URL is known,
   add it here and replace every CTA in one commit.
 - **Secondary CTAs** by series: guides → the matching template post;
-  templates → free trial; compare → `/#pricing`; product → free trial;
-  customers → free trial; company → `/#how-it-works`.
+  templates → free tier; compare → `/#pricing`; product → free tier;
+  customers → free tier; company → `/#how-it-works`.
 - One primary CTA per post, placed after the reader has gotten value (never
   above the "Key takeaways" box). A second, softer mention in the closing
   paragraph is allowed.

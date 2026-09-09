@@ -63,8 +63,8 @@ once access is available.
 
 | Proposed type / series | Working title | Angle | Proposed image source / CTA |
 |---|---|---|---|
-| Article / Guides | Group decision making process for teams | Show how to collect input and document a defensible decision while keeping dissent visible. | Generated brand card / free trial at `/#pricing` |
-| Article / Templates | Decision matrix template for team choices | Give the reader a usable template and make scoring assumptions and disagreements explicit. | Generated brand card / free trial at `/#pricing` |
+| Article / Guides | Group decision making process for teams | Show how to collect input and document a defensible decision while keeping dissent visible. | Generated brand card / free tier at `/#pricing` |
+| Article / Templates | Decision matrix template for team choices | Give the reader a usable template and make scoring assumptions and disagreements explicit. | Generated brand card / free tier at `/#pricing` |
 | Article / Guides | Pairwise comparison method for team decisions | Explain head-to-head comparisons, how pairs inform rankings, and the limits of the method. | Generated brand card / matching template as secondary link; primary CTA at `/#pricing` |
 
 These are proposals, not completed article intake. Confirm type, series, title

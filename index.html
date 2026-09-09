@@ -10,6 +10,43 @@
 
   gtag('config', 'G-ZLZMXRHMBS');
 </script>
+<!-- CTA conversion tracking (GA4) — sends cta_click / select_plan / file_download -->
+<script>
+  (function () {
+    var norm = function (s) { return (s || '').replace(/\s+/g, ' ').trim().slice(0, 100); };
+    document.addEventListener('click', function (event) {
+      var link = event.target.closest ? event.target.closest('a[href]') : null;
+      if (!link || typeof gtag !== 'function') return;
+      var isCta = link.classList.contains('btn');
+      var plan = link.closest('.plan');
+      var href = link.getAttribute('href') || '';
+      var download = link.hasAttribute('download');
+      if (!isCta && !download) return;
+
+      var section = link.closest('[id]');
+      var params = {
+        cta_label: norm(link.textContent),
+        cta_location: section ? section.id : 'page',
+        cta_destination: link.href,
+        page_path: location.pathname
+      };
+      if (download) {
+        gtag('event', 'file_download', {
+          file_name: href.split('/').pop(),
+          link_text: params.cta_label,
+          page_path: params.page_path
+        });
+        return;
+      }
+      if (plan && plan.querySelector('h3')) {
+        params.plan_name = norm(plan.querySelector('h3').textContent);
+        gtag('event', 'select_plan', params);
+      }
+      gtag('event', 'cta_click', params);
+    }, true);
+  })();
+</script>
+<script src="https://app.rybbit.io/api/script.js?siteId=564788f6f73e" defer></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="msvalidate.01" content="F86D4DCCE775091832BE91923857C2BE" />
@@ -81,7 +118,7 @@
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "USD",
-        "description": "14-day free trial. No credit card required."
+        "description": "Free tier available. No credit card required."
       },
       "@id": "https://choiceboard.io/#software"
     },
@@ -130,10 +167,10 @@
         },
         {
           "@type": "Question",
-          "name": "How does the free trial work?",
+          "name": "How does the free tier work?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Every plan starts with a 14-day free trial with full access — projects, unlimited participants, and the complete results suite. No credit card required. You only pay if ChoiceBoard earns a place in how your team decides."
+            "text": "The Starter plan is a free tier for individuals and small teams. It includes 2 active projects, up to 20 responses, Pick-one and Rank-all modes, and the core results view. Upgrade when you need more projects, more admins, unlimited participants, or the full results suite."
           }
         }
       ]
@@ -351,7 +388,7 @@
     .plan li{display:flex;gap:10px;font:500 14px/1.45 var(--font-body);color:#3d4759}
     .plan li svg{flex:none;margin-top:2px}
     .plan .btn{justify-content:center}
-    .trial-note{text-align:center;margin-top:28px;font:600 14px/1.5 var(--font-body);color:var(--muted)}
+    .pricing-note{text-align:center;margin-top:28px;font:600 14px/1.5 var(--font-body);color:var(--muted)}
 
     /* ===== FAQ ===== */
     .faq{max-width:820px;margin:44px auto 0}
@@ -441,7 +478,7 @@
       </nav>
       <div class="top-actions">
         <a class="signin" href="#pricing">Sign in</a>
-        <a class="btn btn-primary" href="#pricing">Start free trial</a>
+        <a class="btn btn-primary" href="#pricing">Start free</a>
       </div>
       <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
@@ -453,7 +490,7 @@
     <a href="#pricing">Pricing</a>
     <a href="#faq">FAQ</a>
     <a href="/blog/">Blog</a>
-    <a class="btn btn-primary" href="#pricing">Start free trial</a>
+    <a class="btn btn-primary" href="#pricing">Start free</a>
   </nav>
 
   <main id="top">
@@ -491,19 +528,19 @@
                 <div class="track"><div class="fill" id="drFill" style="width:0%"></div></div>
                 <p><span>Agreement with your future self</span><b id="drPct">0%</b></p>
               </div>
-              <a class="btn btn-primary btn-lg" href="#pricing">Start your free trial <span class="arrow">→</span></a>
+              <a class="btn btn-primary btn-lg" href="#pricing">Start free <span class="arrow">→</span></a>
             </div>
           </div>
         </div>
 
         <div class="hero-ctas">
-          <a class="btn btn-primary btn-lg" href="#pricing">Start your free trial <span class="arrow">→</span></a>
+          <a class="btn btn-primary btn-lg" href="#pricing">Start free <span class="arrow">→</span></a>
           <a class="btn btn-glass btn-lg" href="#how-it-works">See how it works</a>
         </div>
         <div class="risk-free">
-          <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2FD3B5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> 14-day free trial</span>
-          <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2FD3B5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> No credit card required</span>
-          <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2FD3B5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Unlimited participants</span>
+          <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2FD3B5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Free tier</span>
+          <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2FD3B5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> No credit card</span>
+          <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2FD3B5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> 20 responses</span>
         </div>
       </div>
     </section>
@@ -783,8 +820,8 @@
       <div class="wrap">
         <div class="center reveal">
           <span class="kicker">Pricing</span>
-          <h2>Every plan starts with a free trial</h2>
-          <p class="lead">Full access for 14 days. No credit card. If ChoiceBoard doesn't earn a place in how your team decides, walk away.</p>
+          <h2>Start with the free tier</h2>
+          <p class="lead">Use ChoiceBoard for free, then upgrade when your team needs more projects, admins, or advanced results.</p>
         </div>
         <div class="plans reveal">
           <div class="plan">
@@ -812,7 +849,7 @@
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#14967F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Templates, exports &amp; presentation view</li>
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#14967F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Deadlines &amp; participation tracking</li>
             </ul>
-            <a class="btn btn-primary" href="/#pricing">Start 14-day free trial</a>
+            <a class="btn btn-primary" href="/#pricing">Choose Pro</a>
           </div>
           <div class="plan">
             <h3>Team</h3>
@@ -826,10 +863,10 @@
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#14967F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Custom branding</li>
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#14967F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Priority support</li>
             </ul>
-            <a class="btn btn-ghost" href="/#pricing">Start free trial</a>
+            <a class="btn btn-ghost" href="/#pricing">Choose Team</a>
           </div>
         </div>
-        <p class="trial-note">Questions about plans? <a href="#faq" style="color:var(--brand);font-weight:700">Read the FAQ</a> — or just start the trial and see for yourself.</p>
+        <p class="pricing-note">Questions about plans? <a href="#faq" style="color:var(--brand);font-weight:700">Read the FAQ</a> — or just start free and see for yourself.</p>
       </div>
     </section>
 
@@ -862,8 +899,8 @@
             <p class="a">Any decision with multiple options and multiple stakeholders: vendor and software selection, feature and roadmap prioritization, hiring panels, budget allocation, naming and creative reviews, and strategy trade-offs. Use Pick-one mode when you need a single winner, or Rank-all mode when you need a full priority order.</p>
           </details>
           <details>
-            <summary>How does the free trial work? <span class="plus">+</span></summary>
-            <p class="a">Every plan starts with a 14-day free trial with full access — projects, unlimited participants, and the complete results suite. No credit card required. You only pay if ChoiceBoard earns a place in how your team decides.</p>
+            <summary>How does the free tier work? <span class="plus">+</span></summary>
+            <p class="a">The Starter plan is a free tier for individuals and small teams. It includes 2 active projects, up to 20 responses, Pick-one and Rank-all modes, and the core results view. Upgrade when you need more projects, more admins, unlimited participants, or the full results suite.</p>
           </details>
         </div>
       </div>
@@ -875,9 +912,9 @@
         <span class="kicker" style="color:#AAB8FF">Ready when you are</span>
         <h2>Your next big decision deserves better than a meeting</h2>
         <p>Set up your first project in two minutes. Invite your team. Get an answer everyone can stand behind.</p>
-        <a class="btn btn-light btn-lg" href="#pricing">Start your free trial <span class="arrow">→</span></a>
+        <a class="btn btn-light btn-lg" href="#pricing">Start free <span class="arrow">→</span></a>
         <div class="risk-free">
-          <span>14-day free trial</span><span>·</span><span>No credit card</span><span>·</span><span>Cancel anytime</span>
+          <span>Free tier</span><span>·</span><span>20 responses</span><span>·</span><span>No credit card</span>
         </div>
       </div>
     </section>
@@ -1005,7 +1042,7 @@
         } else {
           kicker.textContent = 'Bold ranking detected';
           title.textContent = 'More meetings. Really?';
-          sub.textContent = "You ranked meetings and gut feel over evidence. Respect. Fortunately, this decision is reversible — the free trial is right here.";
+          sub.textContent = "You ranked meetings and gut feel over evidence. Respect. Fortunately, this decision is reversible — the free tier is right here.";
         }
         document.getElementById('drPct').textContent = pct + '%';
         stage.classList.add('done');

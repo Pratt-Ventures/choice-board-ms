@@ -10,6 +10,43 @@
 
   gtag('config', 'G-ZLZMXRHMBS');
 </script>
+<!-- CTA conversion tracking (GA4) — sends cta_click / select_plan / file_download -->
+<script>
+  (function () {
+    var norm = function (s) { return (s || '').replace(/\s+/g, ' ').trim().slice(0, 100); };
+    document.addEventListener('click', function (event) {
+      var link = event.target.closest ? event.target.closest('a[href]') : null;
+      if (!link || typeof gtag !== 'function') return;
+      var isCta = link.classList.contains('btn');
+      var plan = link.closest('.plan');
+      var href = link.getAttribute('href') || '';
+      var download = link.hasAttribute('download');
+      if (!isCta && !download) return;
+
+      var section = link.closest('[id]');
+      var params = {
+        cta_label: norm(link.textContent),
+        cta_location: section ? section.id : 'page',
+        cta_destination: link.href,
+        page_path: location.pathname
+      };
+      if (download) {
+        gtag('event', 'file_download', {
+          file_name: href.split('/').pop(),
+          link_text: params.cta_label,
+          page_path: params.page_path
+        });
+        return;
+      }
+      if (plan && plan.querySelector('h3')) {
+        params.plan_name = norm(plan.querySelector('h3').textContent);
+        gtag('event', 'select_plan', params);
+      }
+      gtag('event', 'cta_click', params);
+    }, true);
+  })();
+</script>
+<script src="https://app.rybbit.io/api/script.js?siteId=564788f6f73e" defer></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -121,7 +158,7 @@
       </nav>
       <div class="top-actions">
         <a class="signin" href="/#pricing">Sign in</a>
-        <a class="btn btn-primary" href="/#pricing">Start free trial</a>
+        <a class="btn btn-primary" href="/#pricing">Start free</a>
       </div>
       <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
@@ -132,7 +169,7 @@
     <a href="/#use-cases">Use cases</a>
     <a href="/#pricing">Pricing</a>
     <a href="/blog/" aria-current="page">Blog</a>
-    <a class="btn btn-primary" href="/#pricing">Start free trial</a>
+    <a class="btn btn-primary" href="/#pricing">Start free</a>
   </nav>
 
   <main id="top">
@@ -333,11 +370,11 @@
         <h2>Put your next decision on a ChoiceBoard</h2>
         <p>Set up a project in two minutes, invite your team, and get a ranked result with a measured level of agreement.</p>
         <div class="ctas">
-          <a class="btn btn-light btn-lg" href="/#pricing">Start your free trial <span class="arrow">→</span></a>
+          <a class="btn btn-light btn-lg" href="/#pricing">Start free <span class="arrow">→</span></a>
           <a class="btn btn-glass btn-lg" href="/#how-it-works">See how it works</a>
         </div>
         <div class="risk-free">
-          <span>14-day free trial</span><span>·</span><span>No credit card</span><span>·</span><span>Cancel anytime</span>
+          <span>Free tier</span><span>·</span><span>20 responses</span><span>·</span><span>No credit card</span>
         </div>
       </div>
     </section>

@@ -19,6 +19,43 @@
 
   gtag('config', 'G-ZLZMXRHMBS');
 </script>
+<!-- CTA conversion tracking (GA4) — sends cta_click / select_plan / file_download -->
+<script>
+  (function () {
+    var norm = function (s) { return (s || '').replace(/\s+/g, ' ').trim().slice(0, 100); };
+    document.addEventListener('click', function (event) {
+      var link = event.target.closest ? event.target.closest('a[href]') : null;
+      if (!link || typeof gtag !== 'function') return;
+      var isCta = link.classList.contains('btn');
+      var plan = link.closest('.plan');
+      var href = link.getAttribute('href') || '';
+      var download = link.hasAttribute('download');
+      if (!isCta && !download) return;
+
+      var section = link.closest('[id]');
+      var params = {
+        cta_label: norm(link.textContent),
+        cta_location: section ? section.id : 'page',
+        cta_destination: link.href,
+        page_path: location.pathname
+      };
+      if (download) {
+        gtag('event', 'file_download', {
+          file_name: href.split('/').pop(),
+          link_text: params.cta_label,
+          page_path: params.page_path
+        });
+        return;
+      }
+      if (plan && plan.querySelector('h3')) {
+        params.plan_name = norm(plan.querySelector('h3').textContent);
+        gtag('event', 'select_plan', params);
+      }
+      gtag('event', 'cta_click', params);
+    }, true);
+  })();
+</script>
+<script src="https://app.rybbit.io/api/script.js?siteId=564788f6f73e" defer></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Decision matrix template for team choices | ChoiceBoard</title>
@@ -225,7 +262,7 @@
 <p>Use the same options and factors to frame a decision in ChoiceBoard. Participants answer head-to-head comparisons, and the result includes a ranking and a measured level of agreement. This is a different input method from entering spreadsheet ratings; it does not imply a workbook import feature.</p>
 <blockquote><p>ChoiceBoard doesn’t hide disagreement, it measures it.</p><footer>The ChoiceBoard team</footer></blockquote>
 <p>ChoiceBoard structures the decision. The person who has to make the call still evaluates the result. For the surrounding workflow, read the <a href="/blog/guides/group-decision-making-process/">group decision-making process</a>. For the comparison method, read the <a href="/blog/guides/pairwise-comparison-method/">pairwise comparison guide</a>.</p></section><section class="faq"><h2>Frequently asked questions</h2><details><summary>Do decision matrix weights have to total 100%?</summary><p>This workbook requires weights totaling 100%. That keeps its weighted totals on the rating scale. Other weighted-scoring implementations can use different weight conventions.</p></details><details><summary>Should a high cost get a high score?</summary><p>Not when higher scores mean more desirable results. Define the rating direction before scoring. For example, a low total cost can receive a higher desirability rating.</p></details><details><summary>What happens if a rating is missing?</summary><p>The workbook leaves the weighted total blank and flags the missing input. Enter a rating only when you have a basis for it; do not use zero to represent an unknown.</p></details><details><summary>Does the highest score determine the final decision?</summary><p>The total summarizes the ratings and weights you entered. Review the assumptions, constraints, and disagreement before choosing. Record the decision owner’s reasoning.</p></details></section><section class="authorcard"><h2>About the author</h2><p><strong>The ChoiceBoard team</strong></p><p>We write about how teams compare options, weigh factors, and reach a decision they can explain. Sources for the factual claims are linked in the article; practical recommendations are identified as our guidance.</p><p class="source-date">Sources reviewed September 7, 2026.</p></section>
- <p><a class="btn btn-primary" href="/#pricing">Start your free trial</a></p></article></main>
+ <p><a class="btn btn-primary" href="/#pricing">Start free</a></p></article></main>
 <footer class="simple-footer"><div class="wrap"><p>Group decision-making software for teams.</p><a href="/">ChoiceBoard home</a> · <a href="/blog/">All series</a></div></footer>
 </body>
 </html>
